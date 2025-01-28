@@ -6,7 +6,6 @@ require('dotenv').config({ path: path.join(__dirname, '../.env') })
 
 const settings = require('../../src/game/runner/bishop/settings/bishopSettings')
 const call = require('../../tools/bishop/cheats/controllers/call')
-const cheats = require('../../tools/bishop/cheats/controllers/cheatController')
 const baseCallBody = require('../../tools/bishop/cheats/models/baseCallBody.js')
 const context = require('../../tools/bishop/cheats/models/context')
 
@@ -39,7 +38,6 @@ function getBaseTriggerFunc(withCheck = false) {
   return async function (trigger, ix) {
     await localCall(trigger, ix)
     if (withCheck) {
-      cheats.check()
     }
     return context.call.trigger
   }
@@ -70,7 +68,6 @@ const triggers = {
     }
     if (context.currentTrigger === 'spin') {
       context.iteration++
-      cheats.check()
     }
     if (context.iteration % 100000 === 0) {
       console.clear()
@@ -88,7 +85,6 @@ const triggers = {
   cascade: getBaseTriggerFunc(true),
   destroy: getBaseTriggerFunc(true),
   doneAction: async function () {
-    cheats.save()
     console.log(`done! iterations: ${context.iteration}`)
   },
   accumulation_respin: getBaseTriggerFunc(true),

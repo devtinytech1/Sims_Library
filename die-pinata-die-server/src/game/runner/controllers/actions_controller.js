@@ -6,11 +6,6 @@ const { KEY, TRIGGER } = require('../configs/static')
 const actions = {
   init: require('./actions/action_init.js'),
   spin: require('../../../../tools/simulations/sims'),
-  // spin: require('./actions/action_spin.js'),
-  // respin: require('./actions/action_respin.js'),
-  // freespins: require('./actions/action_freespins.js'),
-  // freespins_end: require('./actions/action_freespins_end.js'),
-  // buy_bonus: require('./actions/action_buy_bonus.js'),
 }
 
 module.exports.execute = async function (client) {
