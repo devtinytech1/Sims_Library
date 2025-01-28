@@ -44,7 +44,7 @@ async function execute(client) {
   const settings = baseSettings.get(client.gameId);
   let bgTotalWin = 0, fgTotalWin = 0, jpTotalWin = 0;
 
-  for (let i = 0; i < 1000000; i++) {
+  for (let i = 0; i < 2000000; i++) {
     totalSpins++;
     incrementTriggers();
     await playRound(client, settings);

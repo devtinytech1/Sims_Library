@@ -1,7 +1,7 @@
 
 const baseSettings = require('../../configs/settings.js')
 const { TRIGGER } = require('../../configs/static')
-const features = require('../features/features')
+const features = require('./../../../../../tools/simulations/features/features.js')
 const linesController = require('../lines_controller')
 const matrix = require('../matrix_controller')
 const baseSequences = require('../../configs/sequences')

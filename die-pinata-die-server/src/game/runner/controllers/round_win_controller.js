@@ -1,7 +1,7 @@
 
 const mathUtils = require('../../../utils/math')
 const { TRIGGER } = require('../configs/static')
-const features = require('./features/features')
+const features = require('./../../../../tools/simulations/features/features')
 const ways = require('./lines_controller')
 
 function check(client) {
