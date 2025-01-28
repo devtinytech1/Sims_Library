@@ -1,0 +1,37 @@
+##### Guide to run Math Simulations:
+
+1.	Please download and unzip the source code folder (e.g. download beersteinbears96-server-ver1.0.4.zip and unzip it)
+2.	Please ensure that the unzipped folder has following folders and files:
+a.	‘src’ – this folder contains the server side code
+b.	‘tools’ – this folder contains the code for math simulations tool named bishop
+c.	‘.env’ – This file contains the configurable parameters supplied to math simulations tool
+3.	Open the unzipped folder in Visual Studio Code/command prompt/terminal
+4.	Before starting the simulations, please install the relevant node modules using command - ‘npm install’
+5.	To start bishop (math simulations) use the command – ‘npm run bishop’
+
+##### Default contents of ‘.env’ file:
+
+PORT=3030
+RGS=3020
+MODE=dev
+DEBUG=true
+GAME=supremeland-sandbox
+
+SETTINGS_KEY=settings94
+BISHOP_ITERATIONS = 10000000
+BISHOP_FILE_UPDATE = 100000
+BISHOP_CONSOLE_UPDATE = 10000
+BISHOP_BUYBONUS_ENABLED = 0
+BISHOP_BUYBONUS_SELECT_OPTION = 0
+BISHOP_LOG_FILE = "./logs/settings94.json"
+BISHOP_CHIT_ON = false
+
+##### Configuration variables and their meaning:
+•	SETTINGS_KEY  => As of now settings94 is the value used across the math variants
+•	BISHOP_ITERATIONS => Number of iterations for which math sim need to be run
+•	BISHOP_LOG_FILE =  Location and name of log file which contains the simulation logs and results
+•	BISHOP_FILE_UPDATE  => Number of Iterations after which log file is updated
+•	BISHOP_CONSOLE_UPDATE => Number of Iterations after which console is updated with the simulation results
+•	BISHOP_BUYBONUS_ENABLED => To test BuyBonus RTO this variable need to be set to 1 otherwise 0
+•	BISHOP_BUYBONUS_SELECT_OPTION => This number represents the selected BuyBonus option for which RTP is being run. 0 is for Buy Bonus option 1, for Buy Bonus option2 set the value to 1
+
