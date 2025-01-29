@@ -6,12 +6,6 @@ const { triggers } = require('../configs/triggers')
 const actions = {
   init: require('./actions/action_init_node.js'),
   spin: require('../../../../tools/simulations/sims.js'),
-  // spin: require('./actions/action_spin_node.js'),
-  freespins: require('./actions/action_freespin_node.js'),
-  holdnspin: require('./actions/action_holdnspin_node.js'),
-  holdnspin_end: require('./actions/action_holdnspin_end.js'),
-  freespins_end: require('./actions/action_freespins_end.js'),
-  buy_bonus: require('./actions/action_buy_bonus.js'),
 }
 
 module.exports.getNode = async function (client) {

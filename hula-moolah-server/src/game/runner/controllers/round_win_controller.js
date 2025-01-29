@@ -1,6 +1,6 @@
 
 const { round } = require('../../../utils/math')
-const { bigWinCheck } = require('./features/big_win_feature')
+const { bigWinCheck } = require('../../../../tools/simulations/features/big_win_feature')
 
 function checkRoundWin(client) {
   bigWinCheck(client, client.node.context.win)

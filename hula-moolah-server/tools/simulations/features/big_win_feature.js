@@ -1,5 +1,5 @@
 
-const baseSettings = require('../../configs/settings.js')
+const baseSettings = require('../../../../hula-moolah-server/src/game/runner/configs/settings')
 
 function bigWinCheck(client, model) {
   if (model?.total) {
