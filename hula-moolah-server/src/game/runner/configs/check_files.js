@@ -2,7 +2,6 @@ const start = '/app'
 
 module.exports.get = () => {
   return {
-    'bishop.js': start + '/src/game/runner/bishop/bishop.js',
     'config.js': start + '/src/rng/config.js',
     'sequences.js': start + '/src/game/runner/configs/sequences.js',
     'settings.js': start + '/src/game/runner/configs/settings.js',

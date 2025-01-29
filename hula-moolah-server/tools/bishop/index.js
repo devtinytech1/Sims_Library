@@ -4,4 +4,3 @@ const path = require('path')
 require('dotenv').config()
 require('dotenv').config({ path: path.join(__dirname, '.env') })
 
-require('../../src/game/runner/bishop/bishop.js')

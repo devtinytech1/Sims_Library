@@ -1,9 +1,5 @@
 const fs = require('fs')
 const { checkCheats } = require('../controllers/cheat_controller')
-const { updateOutput, clearOutput } = require('../controllers/console_controller')
-const { checkSaveFileStatsOrCallBack } = require('../controllers/csv_controller')
-const { saveDebug } = require('../controllers/debug')
-const { setUserStats } = require('../controllers/user_controller')
 const context = require('../models/context')
 const settings = require('../settings/bishopSettings')
 const { getRTP, round } = require('../utils/math')
@@ -48,7 +44,6 @@ function updateMainStats() {
     context.stats.PayInOut = `-----: ${round(context.stats.totalPayOut / context.stats.totalBet * 100, 100)}%`
     context.stats.rtp = round(context.bgStats.rtp + context.fsStats.rtp + context.hnsStats.rtp, 10000)
     updateMainStatsListenersPool.forEach(listener => listener())
-    updateOutput()
 
     //write to file after every 100000 iteration
     var fileName = settings.bishopLogsFiles
@@ -61,14 +56,11 @@ function updateMainStats() {
     fs.writeFileSync(fileName, JSON.stringify(objectData) + '\n', { flag: 'a' });
   }
   if (context.stats.iteration !== settings.iterationsCount) {
-    checkSaveFileStatsOrCallBack()
   }
 }
 
 function saveMainStats() {
   checkCheats()
-  setUserStats()
-  saveDebug()
   maxWinCheck()
 }
 
