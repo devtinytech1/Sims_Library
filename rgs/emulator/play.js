@@ -1,4 +1,4 @@
-const game = require('../../../src/game/play')
+const game = require('../../hula-moolah-server/src/game/play')
 const { maximumWinCap, currencyMultiplier, rtp, configuration } = require('./config')
 const db = require('./db')
 
@@ -27,7 +27,6 @@ async function execute(params) {
     maximumWinCap,
     configuration,
     rtp,
-    roundBet:gameState.spinBet,
   }
 }
 module.exports = execute

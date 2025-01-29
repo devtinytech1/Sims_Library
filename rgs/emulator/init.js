@@ -1,4 +1,4 @@
-const game = require('../../../src/game/init')
+const game = require('../../hula-moolah-server/src/game/init')
 const { maximumWinCap, currencyMultiplier, rtp, currency, configuration, stats } = require('./config')
 const db = require('./db')
 
