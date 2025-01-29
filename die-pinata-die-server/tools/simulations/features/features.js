@@ -2,7 +2,7 @@
 const EXP = {
   winType: require('../features/win_type_feature'),
   diceRoll: require('../features/dice_feature'),
-  fs_diceRoll: require('../features/fs_diceRoll'),
+  fs_diceRoll: require('../features/fs_diceRoll1'),
   prizePot: require('../features/prize_pot_feature')
 }
 

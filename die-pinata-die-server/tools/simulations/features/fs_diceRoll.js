@@ -75,7 +75,7 @@ async function reSpinOutcome(client, symbol) {
     randomSymbol: symbol,
     respinPositions: respinPositions,
     stickyPositions: respinPositions,
-    featureTriggered: 'Respin',
+    featureTriggered: 'fs_ReSpin',
   };
 }
 

@@ -1,6 +1,6 @@
 
 const { round } = require('../../src/utils/math.js')
-const { bigWinCheck } = require('../../src/game/runner/controllers/features/big_win_feature.js')
+const { bigWinCheck } = require('../features/win_type_feature'),
 
 async function checkRoundWin(client) {
   bigWinCheck(client, client.node.context.win)

@@ -4,7 +4,7 @@ const baseSequences = require('../../src/game/runner/configs/sequences')
 const baseSettings = require('../../src/game/runner/configs/settings');
 const matrix = require('../../src/game/runner/controllers/matrix_controller');
 const roundWin = require('../../tools/simulations/round_win_controller');
-const features = require('../../src/game/runner/controllers/features/features');
+const features = require('../../tools/simulations/features/features');
 const respinData = require('../../tools/simulations/respin');
 
 // To set the initial freespins model.

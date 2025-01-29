@@ -5,7 +5,6 @@ require('dotenv').config()
 require('dotenv').config({ path: path.join(__dirname, '../.env') })
 
 const settings = require('../../src/game/runner/bishop/settings/bishopSettings')
-const call = require('../../src/game/runner/bishop/controllers/call')
 const cheats = require('../../src/game/runner/bishop/controllers/cheat_controller')
 const baseCallBody = require('../../src/game/runner/bishop/models/baseCallBody')
 const context = require('../../src/game/runner/bishop/models/context')
