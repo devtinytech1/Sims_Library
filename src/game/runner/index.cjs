@@ -4,7 +4,7 @@ const fs = require('fs')
 const { error } = require('../../tools/log.cjs')
 const filesForCheck = require('./configs/check_files.cjs').get()
 const { execute } = require('../../../games/die-pinata-die-server/src/game/runner/controllers/actions_controller')
-const { getClient } = require('../../../games/die-pinata-die-server/src/game/runner/models/client')
+const { getClient } = require('../../../src/models/client.cjs')
 const crypto = require('crypto')
 
 async function audit() {
