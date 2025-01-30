@@ -1,5 +1,5 @@
 
-const settings = require('../../../../src/game/runner/bishop/settings/bishopSettings')
+const settings = require('../../../../games/die-pinata-die-server/src/game/runner/bishop/settings/bishopSettings')
 
 const baseCallBody = (action, index) => {
   if (!action) {

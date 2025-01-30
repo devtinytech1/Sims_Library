@@ -1,8 +1,8 @@
 
 let lastResponse = {}
 
-const { init, play } = require('../../../../src/game/runner/index')
-const context = require('../models/context')
+const { init, play } = require('../../../../games/die-pinata-die-server/src/game/runner/index')
+const context = require('../models/context.cjs')
 
 function getRequestData(request) {
 context.bishopID = '' + Date.now() + '_' + (Math.floor(Math.random() * 10000))
