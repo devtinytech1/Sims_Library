@@ -1,5 +1,5 @@
 
-const mathUtils = require('../../../utils/math')
+const mathUtils = require('../../../../../../src/utils/math.cjs')
 const { KEY, TRIGGER } = require('../configs/static')
 
 module.exports.getClient = async function (requestData, init) {

@@ -1,4 +1,4 @@
-const mathUtils = require('../../../utils/math')
+const mathUtils = require('../../../../../../src/utils/math.cjs')
 const baseSettings = require('../configs/settings.js'),
   wilds = baseSettings.base.wilds,
   scatters = baseSettings.base.scatters,

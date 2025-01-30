@@ -1,5 +1,5 @@
 
-const mathUtils = require('../../../utils/math')
+const mathUtils = require('../../../../../../src/utils/math.cjs')
 const { compose } = require('../compose')
 const { KEY, TRIGGER } = require('../configs/static')
 

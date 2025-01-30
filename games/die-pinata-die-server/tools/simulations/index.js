@@ -100,7 +100,7 @@ const triggers = {
 
 function nextTrigger(trigger) {
   // eslint-disable-next-line no-unused-expressions
-  triggers[trigger] ? triggers[trigger](trigger).then(nextTrigger, cError) : cError(`trigger:${trigger}`)
+  triggers[trigger](trigger)
 }
 
 function start() {

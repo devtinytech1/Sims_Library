@@ -1,5 +1,5 @@
 
-const mathUtils = require('../../src/utils/math')
+const mathUtils = require('../../../../src/utils/math.cjs')
 const features = require('./features/features')
 const ways = require('../../src/game/runner/controllers/lines_controller')
 
