@@ -1,4 +1,4 @@
-const pool = require('./pool')
+const pool = require('./pool.cjs')
 
 function rnd(bound) {
   const random = Math.floor(Math.random() * bound)

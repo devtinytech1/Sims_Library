@@ -1,7 +1,7 @@
 
 let lastResponse = {}
 
-const { init, play } = require('../../../../games/die-pinata-die-server/src/game/runner/index')
+const { init, play } = require('../../../../src/game/runner/index.cjs')
 const context = require('../models/context.cjs')
 
 function getRequestData(request) {

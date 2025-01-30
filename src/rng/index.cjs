@@ -1,6 +1,6 @@
-const transport = require('../tools/transport')
-const { endpoints, name } = require('./config')
-const rnd = require('./dev')
+const transport = require('../tools/transport/index.cjs')
+const { endpoints, name } = require('./config.cjs')
+const rnd = require('./dev.cjs')
 
 const { MODE } = process.env
 

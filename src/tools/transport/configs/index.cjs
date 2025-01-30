@@ -1,4 +1,4 @@
-const rng = require('./rng')
+const rng = require('./rng.cjs')
 
 const configs = { rng }
 

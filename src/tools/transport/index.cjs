@@ -1,5 +1,5 @@
-const configs = require('./configs')
-const sender = require('./sender')
+const configs = require('./configs/index.cjs')
+const sender = require('./sender.cjs')
 
 async function send(data) {
   const { name } = data

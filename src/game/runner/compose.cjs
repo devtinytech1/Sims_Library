@@ -1,6 +1,6 @@
 
-const mathUtils = require('../../../../../src/utils/math.cjs')
-const { TRIGGER } = require('../../../../../src/game/runner/configs/static.cjs')
+const mathUtils = require('../../utils/math.cjs')
+const { TRIGGER } = require('./configs/static.cjs')
 
 function compose(client) {
   const data = {
