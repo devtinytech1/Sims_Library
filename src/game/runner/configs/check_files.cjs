@@ -3,7 +3,7 @@ const start = '/app'
 module.exports.get = () => {
   return {
     'config.js': start + '/src/rng/config.js',
-    'sequences.js': start + '/src/game/runner/configs/sequences.js',
+    'sequences.js': start + 'configs/sequences.js',
     'settings.js': start + '/src/game/runner/configs/settings.js',
     'action_init.js': start + '/src/game/runner/controllers/actions/action_init.js',
     'matrix_controller.js': start + '/src/game/runner/controllers/matrix_controller.js',

@@ -1,10 +1,9 @@
 
-const baseSettings = require('../../configs/settings.js')
-const { TRIGGER } = require('../../configs/static')
+const baseSettings = require('../../../../../../../src/game/runner/configs/settings.cjs')
+const { TRIGGER } = require('../../../../../../../src/game/runner/configs/static.cjs')
 const features = require('./../../../../../tools/simulations/features/features.js')
 const linesController = require('../lines_controller')
 const matrix = require('../matrix_controller')
-const baseSequences = require('../../configs/sequences')
 
 module.exports.execute = async function (client) {
 

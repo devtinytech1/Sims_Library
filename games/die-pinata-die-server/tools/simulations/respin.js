@@ -1,4 +1,4 @@
-const baseSettings = require('../../src/game/runner/configs/settings');
+const baseSettings = require('../../../../src/game/runner/configs/settings.cjs');
 const matrix = require('../../src/game/runner/controllers/matrix_controller');
 const roundWin = require('../../tools/simulations/round_win_controller');
 

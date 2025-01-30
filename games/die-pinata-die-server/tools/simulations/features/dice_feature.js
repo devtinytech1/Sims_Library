@@ -1,4 +1,4 @@
-const baseSettings = require('../../../src/game/runner/configs/settings');
+const baseSettings = require('../../../../../src/game/runner/configs/settings.cjs');
 const { getRandomItemByArrayWeights } = require('../../../src/game/runner/math/random_controller');
 const matrix = require('../../../src/game/runner/controllers/matrix_controller');
 

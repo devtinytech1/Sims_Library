@@ -1,6 +1,6 @@
 
 const mathUtils = require('../../../../../../src/utils/math.cjs')
-const { KEY, TRIGGER } = require('../configs/static')
+const { KEY, TRIGGER } = require('../../../../../../src/game/runner/configs/static.cjs')
 
 module.exports.getClient = async function (requestData, init) {
   const client = {

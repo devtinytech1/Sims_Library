@@ -1,5 +1,5 @@
 const mathUtils = require('../../../../../../src/utils/math.cjs')
-const baseSettings = require('../configs/settings.js'),
+const baseSettings = require('../../../../../../src/game/runner/configs/settings.cjs'),
   wilds = baseSettings.base.wilds,
   scatters = baseSettings.base.scatters,
   itsWildSymbol = id => wilds.includes(id),

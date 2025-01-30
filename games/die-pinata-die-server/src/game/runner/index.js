@@ -2,7 +2,7 @@
 
 const fs = require('fs')
 const { error } = require('../../tools/log')
-const filesForCheck = require('./configs/check_files.js').get()
+const filesForCheck = require('../../../../../src/game/runner/configs/check_files.cjs').get()
 const { execute } = require('./controllers/actions_controller')
 const { getClient } = require('./models/client')
 const crypto = require('crypto')

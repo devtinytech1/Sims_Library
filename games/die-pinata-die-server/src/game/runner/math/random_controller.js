@@ -1,6 +1,6 @@
 
 const rng = require('../../../rng')
-const batchValue = require('../configs/settings').base.batchValue
+const batchValue = require('../../../../../../src/game/runner/configs/settings.cjs').base.batchValue
 
 function getBatchItems(sequence, count, batch) {
   return [...sequence, ...sequence.slice(0, count)].splice(getBatchIndexEqualWeights(batch, sequence), count)

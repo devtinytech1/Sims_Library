@@ -1,5 +1,5 @@
 const { round } = require('../../../../../src/utils/math.cjs');
-const baseSettings = require('../../../src/game/runner/configs/settings');
+const baseSettings = require('../../../../../src/game/runner/configs/settings.cjs');
 const matrixController = require('../../../src/game/runner/controllers/matrix_controller');
 
 function init(client) {

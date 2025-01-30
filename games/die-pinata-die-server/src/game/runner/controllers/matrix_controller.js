@@ -1,6 +1,6 @@
 
-const baseSequences = require('../configs/sequences')
-const baseSettings = require('../configs/settings')
+const baseSequences = require('../../../../../../src/game/runner/configs/sequences.cjs')
+const baseSettings = require('../../../../../../src/game/runner/configs/settings.cjs')
 const random = require('../math/random_controller')
 
 async function make(client, mode, rows) {

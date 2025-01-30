@@ -1,7 +1,7 @@
-const baseSettings = require('../../../src/game/runner/configs/settings');
+const baseSettings = require('../../../../../src/game/runner/configs/settings.cjs');
 const { getRandomItemByArrayWeights } = require('../../../src/game/runner/math/random_controller');
 const matrix = require('../../../src/game/runner/controllers/matrix_controller');
-const { TRIGGER } = require('../../../src/game/runner/configs/static')
+const { TRIGGER } = require('../../../../../src/game/runner/configs/static.cjs')
 
 const DICE_ROLL_PROB = 'fs_diceRollProb';
 const DICE_ROLL_OUTCOME = 'fs_diceRollOutcome';

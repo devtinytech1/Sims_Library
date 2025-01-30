@@ -1,7 +1,7 @@
 
 const foundMatrix = require('../../src/game/runner/controllers/matrix_controller')
-const baseSequences = require('../../src/game/runner/configs/sequences')
-const baseSettings = require('../../src/game/runner/configs/settings');
+const baseSequences = require('../../../../src/game/runner/configs/sequences.cjs')
+const baseSettings = require('../../../../src/game/runner/configs/settings.cjs');
 const matrix = require('../../src/game/runner/controllers/matrix_controller');
 const roundWin = require('../../tools/simulations/round_win_controller');
 const features = require('../../tools/simulations/features/features');
