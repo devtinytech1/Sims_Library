@@ -1,7 +1,6 @@
-const baseSettings = require('../../../../../src/game/runner/configs/settings.cjs');
-const { getRandomItemByArrayWeights } = require('../../../../../src/math/random_controller.cjs');
-const matrix = require('../../../src/game/runner/controllers/matrix_controller');
-const { TRIGGER } = require('../../../../../src/game/runner/configs/static.cjs')
+const baseSettings = require('../../../../src/game/runner/configs/settings.cjs');
+const { getRandomItemByArrayWeights } = require('../../../../src/math/random_controller.cjs');
+const matrix = require('../../../../games/die-pinata-die-server/src/game/runner/controllers/matrix_controller');
 
 const DICE_ROLL_PROB = 'fs_diceRollProb';
 const DICE_ROLL_OUTCOME = 'fs_diceRollOutcome';
@@ -10,7 +9,7 @@ const FEATURE_OUTCOME = 'fs_featureOutcome';
 const CONVERT_TO_BONUS_PROB = 'fs_convertToBonusProb';
 const CONVERT_TO_BONUS_OUTCOME = 'fs_convertToBonusOutcome';
 const CONVERT_TO_WILD_PROB = 'fs_convertToWildProb';
-const CONVERT_TO_WILD_OUTCOME = 'fs_convertToWildOutcome'; 
+const CONVERT_TO_WILD_OUTCOME = 'fs_convertToWildOutcome';
 const RESPIN_PROB = 'fs_RespinProb';
 const RESPIN_OUTCOME = 'fs_RespinOutcome';
 
@@ -22,7 +21,7 @@ async function checkDiceRoll(client) {
 }
 
 //Check the diceOutcome (Bonus, Wild or Respin)
-async function checkDiceRollFeature(client){
+async function checkDiceRollFeature(client) {
   const settings = baseSettings.get(client.gameId);
   const wild = baseSettings.base.wilds;
   const scatter = baseSettings.base.scatters;
@@ -71,14 +70,12 @@ async function convertToWildOutcome(client, symbolConvertToWild, wild) {
 //To check respin triggered or not
 async function reSpinOutcome(client, symbol) {
   const respinPositions = matrix.foundSymbols(client.matrix, symbol);
- 
-  client.nextTrigger = TRIGGER.RESPIN;
 
   return {
     randomSymbol: symbol,
     respinPositions: respinPositions,
     stickyPositions: respinPositions,
-    featureTriggered :'fs_ReSpin',
+    featureTriggered: 'fs_ReSpin',
   };
 }
 

@@ -1,4 +1,4 @@
-import DiePinataDie from './games/die-pinata-die-server/tools/simulations/index.js';
+import DiePinataDie from './games/index.cjs';
 
 const SimulationLibrary = {
   DiePinataDie,

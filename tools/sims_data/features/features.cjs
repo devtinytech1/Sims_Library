@@ -1,9 +1,9 @@
 
 const EXP = {
-  winType: require('../features/win_type_feature'),
-  diceRoll: require('../features/dice_feature'),
-  fs_diceRoll: require('../features/fs_diceRoll1'),
-  prizePot: require('../features/prize_pot_feature')
+  winType: require('./win_type_feature.cjs'),
+  diceRoll: require('./basegame/dice_feature.cjs'),
+  fs_diceRoll: require('./freespins/fs_diceRoll1.cjs'),
+  prizePot: require('./basegame/prize_pot_feature.cjs')
 }
 
 function init(client) {

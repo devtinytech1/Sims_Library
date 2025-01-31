@@ -3,8 +3,8 @@ const foundMatrix = require('../../src/game/runner/controllers/matrix_controller
 const baseSequences = require('../../../../src/game/runner/configs/sequences.cjs')
 const baseSettings = require('../../../../src/game/runner/configs/settings.cjs');
 const matrix = require('../../src/game/runner/controllers/matrix_controller');
-const roundWin = require('../../tools/simulations/round_win_controller');
-const features = require('../../tools/simulations/features/features');
+const roundWin = require('../../../../tools/sims_data/round_win_controller.cjs');
+const features = require('../../../../tools/sims_data/features/features.cjs');
 const respinData = require('../../tools/simulations/respin');
 
 // To set the initial freespins model.

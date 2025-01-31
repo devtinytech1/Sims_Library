@@ -1,7 +1,7 @@
 
-const mathUtils = require('../../../../src/utils/math.cjs')
-const features = require('./features/features')
-const ways = require('../../src/game/runner/controllers/lines_controller')
+const mathUtils = require('../../src/utils/math.cjs')
+const features = require('./features/features.cjs')
+const ways = require('../../games/die-pinata-die-server/src/game/runner/controllers/lines_controller')
 
 async function check(client) {
   const clientFeatures = client.getFeatures()

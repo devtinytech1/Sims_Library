@@ -1,5 +1,5 @@
-const matrix_controller = require('../../../src/game/runner/controllers/matrix_controller');
-const { initFreespins } = require('../../../tools/simulations/freespins')
+const matrix_controller = require('../../../../games/die-pinata-die-server/src/game/runner/controllers/matrix_controller');
+const { initFreespins } = require('../../../../games/die-pinata-die-server/tools/simulations/freespins')
 
 //To check the freespin triggered or not based on the condition
 async function scatterFeatureCheck(client, matrix, settings, isFsDiceTriggered) {

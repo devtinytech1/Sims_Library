@@ -1,6 +1,6 @@
-const baseSettings = require('../../../../../src/game/runner/configs/settings.cjs');
-const { getRandomItemByArrayWeights } = require('../../../../../src/math/random_controller.cjs');
-const matrix = require('../../../src/game/runner/controllers/matrix_controller');
+const baseSettings = require('../../../../src/game/runner/configs/settings.cjs');
+const { getRandomItemByArrayWeights } = require('../../../../src/math/random_controller.cjs');
+const matrix = require('../../../../games/die-pinata-die-server/src/game/runner/controllers/matrix_controller');
 
 const DICE_ROLL_PROB = 'diceRollProb';
 const DICE_ROLL_OUTCOME = 'diceRollOutcome';

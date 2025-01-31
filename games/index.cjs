@@ -4,10 +4,10 @@ const path = require('path')
 require('dotenv').config()
 require('dotenv').config({ path: path.join(__dirname, '../.env') })
 
-const settings = require('../../../../src/game/runner/bishop/settings/bishopSettings.cjs')
-const call = require('../../../../tools/bishop/cheats/controllers/call.cjs')
-const baseCallBody = require('../../../../tools/bishop/cheats/models/baseCallBody.cjs')
-const context = require('../../../../tools/bishop/cheats/models/context.cjs')
+const settings = require('../src/game/runner/bishop/settings/bishopSettings.cjs')
+const call = require('../tools/bishop/cheats/controllers/call.cjs')
+const baseCallBody = require('../tools/bishop/cheats/models/baseCallBody.cjs')
+const context = require('../tools/bishop/cheats/models/context.cjs')
 
 const maxIterations = process.env.BISHOP_ITERATIONS || settings.iterationsCount
 

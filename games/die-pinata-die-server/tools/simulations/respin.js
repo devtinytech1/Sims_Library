@@ -1,6 +1,6 @@
 const baseSettings = require('../../../../src/game/runner/configs/settings.cjs');
 const matrix = require('../../src/game/runner/controllers/matrix_controller');
-const roundWin = require('../../tools/simulations/round_win_controller');
+const roundWin = require('../../../../tools/sims_data/round_win_controller.cjs');
 
 // Replace symbols for the base game respin.
 function replaceSymbolsBG(client, diceRollFeature) {
