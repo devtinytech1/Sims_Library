@@ -1,11 +1,11 @@
 const baseSettings = require('../../../../src/game/runner/configs/settings.cjs');
 const { TRIGGER } = require('../../../../src/game/runner/configs/static.cjs');
 const matrix = require('../../src/game/runner/controllers/matrix_controller');
-const roundWin = require('../../../../tools/sims_data/round_win_controller.cjs');
+const roundWin = require('../../../../src/sims_data/round_win_controller.cjs');
 const { round } = require('../../../../src/utils/math.cjs');
-const features = require('../../../../tools/sims_data/features/features.cjs');
+const features = require('../../../../src/sims_data/features/features.cjs');
 const respinData = require('../../tools/simulations/respin');
-const { scatterFeatureCheck } = require('../../../../tools/sims_data/features/freespins/scatters_feature.cjs');
+const { scatterFeatureCheck } = require('../../../../src/sims_data/features/freespins/scatters_feature.cjs');
 const { logRoundStats, logFeatureRTP } = require('./LogFiles/logRTPData');
 const { handleBGWinsData, logNoWinNoFeatureFrequency } = require('./LogFiles/logBGData');
 const { handleJPMiniWinsData, logMiniFeatureFrequency } = require('./LogFiles/logJPMiniData');
