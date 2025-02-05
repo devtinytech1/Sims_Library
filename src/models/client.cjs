@@ -96,9 +96,9 @@ module.exports.getClient = async function (requestData, init) {
     if (value) {
       client.node.spinTotal = mathUtils.round(client.node.spinTotal + value)
       client.totalWin =  mathUtils.round(value)
-      if(client.context.features.diceRoll && client.nextTrigger != TRIGGER.RESPIN){
+      if(client.context.features && client.context.features.diceRoll && client.nextTrigger != TRIGGER.RESPIN){
         client.totalWin =  mathUtils.round(client.node.spinTotal)
-      }else if(client.context.features.fs_diceRoll && client.nextTrigger != TRIGGER.RESPIN){
+      }else if(client.context.features && client.context.features.fs_diceRoll && client.nextTrigger != TRIGGER.RESPIN){
         client.totalWin =  mathUtils.round(value + (client.context.features.fs_diceRoll.before.total || 0))
       }
     }

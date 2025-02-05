@@ -1,9 +1,9 @@
 /* eslint-disable import/order */
 
 const fs = require('fs')
-const filesForCheck = require('./configs/check_files.cjs').get()
-const { execute } = require('../../../games/die-pinata-die-server/src/game/runner/controllers/actions_controller')
-const { getClient } = require('../../../src/models/client.cjs')
+const filesForCheck = require('./configs/check_files.js').get()
+const { getNode } = require('./controllers/actions_controller')
+const { getClient } = require('../../../../../src/models/client.cjs')
 const crypto = require('crypto')
 
 async function audit() {
@@ -19,7 +19,6 @@ async function audit() {
               .digest('hex')
           }
           else {
-
           }
           res()
         }),
@@ -41,7 +40,7 @@ async function play(requestData) {
 async function run(requestData, init) {
   try {
     const client = await getClient(requestData, init)
-    const { data, totalBet, gameRoundOver, totalWin, roundRestore } = await execute(client)
+    const { data, totalBet, gameRoundOver, totalWin, roundRestore } = await getNode(client)
     return { data: data.clientData, gameState: data.serverData, totalBet, gameRoundOver, totalWin, roundRestore }
   }
   catch (e) {

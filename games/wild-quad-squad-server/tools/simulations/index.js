@@ -4,10 +4,10 @@ const path = require('path')
 require('dotenv').config()
 require('dotenv').config({ path: path.join(__dirname, '../.env') })
 
-const settings = require('../../../src/game/runner/bishop/settings/bishopSettings.cjs')
-const call = require('./controllers/call')
-const baseCallBody = require('./models/baseCallBody')
-const context = require('./models/context')
+const settings = require('../../../../src/game/runner/bishop/settings/bishopSettings.cjs')
+const call = require('../bishop/cheats/controllers/call')
+const baseCallBody = require('../bishop/cheats/models/baseCallBody')
+const context = require('../../../../tools/bishop/cheats/models/context.cjs')
 
 const maxIterations = process.env.BISHOP_ITERATIONS || settings.iterationsCount
 
@@ -69,6 +69,7 @@ const triggers = {
     }
     if (context.currentTrigger === 'spin') {
       context.iteration++
+
     }
     if (context.iteration % 100000 === 0) {
       console.clear()
@@ -86,6 +87,7 @@ const triggers = {
   cascade: getBaseTriggerFunc(true),
   destroy: getBaseTriggerFunc(true),
   doneAction: async function () {
+
     console.log(`done! iterations: ${context.iteration}`)
   },
   accumulation_respin: getBaseTriggerFunc(true),
@@ -101,7 +103,7 @@ const triggers = {
 
 function nextTrigger(trigger) {
   // eslint-disable-next-line no-unused-expressions
-  triggers[trigger] ? triggers[trigger](trigger).then(nextTrigger, cError) : cError(`trigger:${trigger}`)
+  triggers[trigger](trigger)
 }
 
 function start() {
