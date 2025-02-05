@@ -8,7 +8,7 @@ const features = require('../../../../src/sims_data/features/features.cjs');
 const respinData = require('../../tools/simulations/respin');
 
 // To set the initial freespins model.
-function setFreespinsModel(currentContext, allCount, addCount, leftCount, default_freespins_position, fs_triggering_matrix) {
+function setFreespinsModel(currentContext, allCount, addCount, leftCount) {
   currentContext.freespins = {
     all: allCount || 0,
     add: addCount || 0,
@@ -16,8 +16,6 @@ function setFreespinsModel(currentContext, allCount, addCount, leftCount, defaul
     total: 0,
     scatters: [],
     ind: 0,
-    fs_matrix: default_freespins_position || [],
-    fs_triggering_matrix: JSON.parse(JSON.stringify(fs_triggering_matrix)),
   }
 }
 
@@ -104,11 +102,9 @@ async function handleFSWins(client) {
 }
 
 //To initialize freespins feature with the number of freespins triggered.
-async function initFreespins(client, fs_triggering_matrix, mask, isFsDiceTriggered) {
+async function initFreespins(client, mask, isFsDiceTriggered) {
   const add = mask.length
-  const default_freespins_position = baseSequences.get(client.gameId)['default_freespins_position'];
-  setFreespinsModel(client.context, add, add, add, default_freespins_position, fs_triggering_matrix)
-  client.context.freespins.scatters = mask
+  setFreespinsModel(client.context, add, add, add)
   await execute(client, isFsDiceTriggered)
 }
 

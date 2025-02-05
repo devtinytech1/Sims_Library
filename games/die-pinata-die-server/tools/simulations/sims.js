@@ -5,7 +5,7 @@ const roundWin = require('../../../../src/sims_data/round_win_controller.cjs');
 const { round } = require('../../../../src/utils/math.cjs');
 const features = require('../../../../src/sims_data/features/features.cjs');
 const respinData = require('../../tools/simulations/respin');
-const { scatterFeatureCheck } = require('../../../../src/sims_data/features/freespins/scatters_feature.cjs');
+const { scatterFeatureCheck1 } = require('../../../../src/sims_data/features/freespins/scatters_feature.cjs');
 const { logRoundStats, logFeatureRTP } = require('./LogFiles/logRTPData');
 const { handleBGWinsData, logNoWinNoFeatureFrequency } = require('./LogFiles/logBGData');
 const { handleJPMiniWinsData, logMiniFeatureFrequency } = require('./LogFiles/logJPMiniData');
@@ -141,7 +141,7 @@ async function playRound(client, settings) {
       await handleBGRespinWinsData(roundRespinWin)
     }
   }
-  let isFSTriggered = await scatterFeatureCheck(client, client.matrix, settings.features.spin, isFsDiceTriggered);
+  let isFSTriggered = await scatterFeatureCheck1(client, client.matrix, settings.features.spin, isFsDiceTriggered);
   if (isFSTriggered) {
     freeSpinTriggerCount++
   }

@@ -71,6 +71,20 @@ module.exports = {
         triggerSymbol: 'B',  
         minTriggerCount: 5,
         trigger : TRIGGER.FREESPINS,
+        triggers: [
+          {
+            found: 3,
+            count: 8,
+          },
+          {
+            found: 4,
+            count: 10,
+          },
+          {
+            found: 5,
+            count: 12,
+          },
+        ],
       },
     },
 
