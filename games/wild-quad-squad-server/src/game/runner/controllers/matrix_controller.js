@@ -14,10 +14,6 @@ const symbolToFind = 'W';
 const minClusterSize = 5;
 
 async function make(client, spinMod, rows) {
-  // for recovery 
-  // if (baseSequences.get(client.gameId)['default_spin_position'] && !client.node.state) {
-  //   return baseSequences.get(client.gameId)['default_spin_position'];
-  // }
   const settings = baseSettings.get(client.gameId)
   if (settings.reelsSet[spinMod + '_Prob']) {
     const option = await randomController.getRandomItemByArrayWeights(client, settings.reelsSet[spinMod + '_Prob'],

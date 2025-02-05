@@ -19,7 +19,7 @@ function logRoundStats(noOfIterations, spinBet, totalBaseGameWin, totalBGCascade
 }
 
 function logToFile(logData) {
-    const filePath = './logRTPFile.txt';
+    const filePath = './logRTPFile02.txt';
     fs.writeFileSync(filePath, logData + '\n', 'utf8');
     // fs.appendFileSync(filePath, logData + '\n', 'utf8');
 }

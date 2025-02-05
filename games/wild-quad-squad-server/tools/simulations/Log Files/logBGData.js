@@ -90,7 +90,7 @@ function logNoWinNoFeatureFrequency(roundNumber, spinBet, totalSpins) {
 }
 
 function logToFile(logData) {
-    const filePath = './logFile.txt';
+    const filePath = './logFile02.txt';
     fs.writeFileSync(filePath, logData + '\n', 'utf8');
 }
 
