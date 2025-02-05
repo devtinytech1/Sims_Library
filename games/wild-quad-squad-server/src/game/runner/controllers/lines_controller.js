@@ -4,7 +4,7 @@ const baseSettings = require('../configs/settings.js')
 
 let multipierSymbols = ['H1', 'H2', 'H3', 'H4'];
 
-function getLineModel(lineId, win, position, symbolId, trigger, len, count, multiplier=1) {
+function getLineModel(lineId, win, position, symbolId, trigger, len, count, multiplier = 1) {
   return {
     id: lineId,
     win: win,
@@ -208,8 +208,7 @@ function scatterPayWin(client, mLineLength, mSymbol, mMask, multipier) {
 
   var multi = 1
   //Apply multiplier to win value
-  if (multipier[mSymbol] > 1)
-  {
+  if (multipier[mSymbol] > 1) {
     multi = multipier[mSymbol]
     win = round(win * multipier[mSymbol])
   }

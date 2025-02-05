@@ -6,7 +6,6 @@ const linesController = require('../lines_controller')
 const matrix = require('../matrix_controller')
 
 module.exports.execute = async function (client) {
-
   try {
     const settings = baseSettings.get(client.gameId)
 
@@ -66,5 +65,4 @@ module.exports.execute = async function (client) {
   catch (e) {
     return Promise.reject(e)
   }
-
 }

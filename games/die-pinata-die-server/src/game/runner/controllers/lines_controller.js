@@ -55,11 +55,11 @@ function checkWays(client, matrix) {
     }, []),
     winModel = makeWinModel(client, client.context)
 
-  const reduceAllWildsWays = function(waysLength){
+  const reduceAllWildsWays = function (waysLength) {
     col = 0;
     wildCount = 1;
-    while(col < waysLength){
-      wildCount = wildCount*(symbols[col][settings.WI] ? symbols[col][settings.WI] : 0)
+    while (col < waysLength) {
+      wildCount = wildCount * (symbols[col][settings.WI] ? symbols[col][settings.WI] : 0)
       col++
     }
     return wildCount
@@ -82,7 +82,7 @@ function checkWays(client, matrix) {
     if (itsWildSymbol(lineSymbol)) {
       Object.entries(symbols[col]).forEach(([sym, count]) => itsWildSymbol(sym) || (col + 1 < symbols.length ?
         nextWay(sym, symbols, col + 1, sym, value * (count + wildsCount)) :
-        setLinesWin(sym, symbols.length, ((value * (count + wildsCount)) -reduceAllWildsWays(symbols.length)))))
+        setLinesWin(sym, symbols.length, ((value * (count + wildsCount)) - reduceAllWildsWays(symbols.length)))))
 
       wildsCount && (col + 1 < symbols.length ?
         nextWay(settings.WI, symbols, col + 1, settings.WI, value * wildsCount) :
@@ -94,10 +94,10 @@ function checkWays(client, matrix) {
         const cnt = symbolCount && wildsCount ? symbolCount + wildsCount : symbolCount ? symbolCount : wildsCount
         col < symbols.length - 1 ?
           nextWay(symbol, symbols, col + 1, symbol, value * cnt) :
-          setLinesWin(symbol, symbols.length, ((value * cnt) -reduceAllWildsWays(symbols.length)))
+          setLinesWin(symbol, symbols.length, ((value * cnt) - reduceAllWildsWays(symbols.length)))
       }
       else {
-        setLinesWin(symbol, col, value -reduceAllWildsWays(col))
+        setLinesWin(symbol, col, value - reduceAllWildsWays(col))
       }
     }
   }

@@ -9,7 +9,6 @@ const { symbolRevealFeatureCheck } = require('../../../../../../src/sims_data/fe
 const { willTheWildFlip, willTheWildFlipInFS, } = require('../../../../../../src/sims_data/features/wild_scatter_replace_feature.cjs')
 const { executeMultiplierFeature } = require('../../../../../../src/sims_data/features/random_multiplier_feature.cjs')
 
-
 const symbolToFind = 'W';
 const minClusterSize = 5;
 
@@ -276,6 +275,5 @@ async function checkReavealedWild(client, matrix) {
   symbolRevealFeatureCheck(client)
   return matrix
 }
-
 
 module.exports = { make, foundSymbols, check, checkReavealedWild, getCascade }

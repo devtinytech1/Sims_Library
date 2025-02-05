@@ -4,8 +4,7 @@ const baseSettings = require('../../../../../../src/game/runner/configs/settings
 const random = require('../../../../../../src/math/random_controller.cjs')
 
 async function make(client, mode, rows) {
-  if(baseSequences.get(client.gameId)['default_basegame_position'] && !client.node.state)
-  {
+  if (baseSequences.get(client.gameId)['default_basegame_position'] && !client.node.state) {
     return baseSequences.get(client.gameId)['default_basegame_position'];
   }
   const reelsSet = baseSettings.get(client.gameId).reelsSet,
@@ -61,14 +60,8 @@ function foundSymbolsforJ(matrix, symbol) {
       break;
     }
   }
-  
+
   return positionsOfJ;
 }
-
-
-
-
-
-
 
 module.exports = { make, copy, swapSymbols, foundSymbols, foundSymbolsforJ }
