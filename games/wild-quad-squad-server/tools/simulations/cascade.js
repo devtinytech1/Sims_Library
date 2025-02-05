@@ -2,7 +2,7 @@ const { TRIGGER } = require('../../../../src/game/runner/configs/static.cjs')
 const matrix_controller = require('../simulations/matrix_controller')
 const { check_to_replace_scatter_basegame_cascade, replace_scatter_cascade,
   check_to_replace_wild_basegame_cascade, replace_Wild_cascade, check_to_replace_wild_FS_cascade, replace_Wild_FS_cascade
-} = require('../../src/game/runner/controllers/features/wild_scatter_replace_feature.js')
+} = require('../../../../src/sims_data/features/wild_scatter_replace_feature.cjs')
 const { setWinModel } = require('../../src/game/runner/controllers/lines_controller.js')
 
 async function handleFreeSpinsCascade(clientClone, winMatrix, destroyArray, reelsSet) {

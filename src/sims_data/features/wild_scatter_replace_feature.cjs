@@ -1,5 +1,5 @@
-const baseSettings = require('../../configs/settings')
-const { getRandomItemByArrayWeights , getRandomInt} = require('../../math/random_controller.js')
+const baseSettings = require('../../../games/wild-quad-squad-server/src/game/runner/configs/settings.js')
+const { getRandomItemByArrayWeights , getRandomInt} = require('../../../games/wild-quad-squad-server/src/game/runner/math/random_controller.js')
 
 // to check will the wild will replace 
 async function check_to_replace_wild(client) {

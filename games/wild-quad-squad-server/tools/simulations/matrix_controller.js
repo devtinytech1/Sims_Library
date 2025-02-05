@@ -3,11 +3,11 @@ const baseSettings = require('../../src/game/runner/configs/settings')
 const randomController = require('../../src/game/runner/math/random_controller')
 const { checkClusterPays, getClusters, scatterPayWin, payWildClusterWin } = require('../../src/game/runner/controllers/lines_controller')
 const { checkRoundWin } = require('../../src/game/runner/controllers/round_win_controller')
-const { cascadeFeatureCheck } = require('../../src/game/runner/controllers/features/cascade_feature')
+const { cascadeFeatureCheck } = require('../../../../src/sims_data/features/cascade_feature.cjs')
 const { TRIGGER } = require('../../../../src/game/runner/configs/static.cjs')
-const { symbolRevealFeatureCheck } = require('../../src/game/runner/controllers/features/reveal_feature')
-const { willTheWildFlip, willTheWildFlipInFS, } = require('../../src/game/runner/controllers/features/wild_scatter_replace_feature')
-const { executeMultiplierFeature } = require('../../src/game/runner/controllers/features/random_multiplier_feature')
+const { symbolRevealFeatureCheck } = require('../../../../src/sims_data/features/reveal_feature.cjs')
+const { willTheWildFlip, willTheWildFlipInFS, } = require('../../../../src/sims_data/features/wild_scatter_replace_feature.cjs')
+const { executeMultiplierFeature } = require('../../../../src/sims_data/features/random_multiplier_feature.cjs')
 
 const symbolToFind = 'W';
 const minClusterSize = 5;

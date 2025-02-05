@@ -1,5 +1,5 @@
 
-const { TRIGGER } = require('../../../../../../../src/game/runner/configs/static.cjs')
+const { TRIGGER } = require('../../game/runner/configs/static.cjs')
 
 function cascadeFeatureCheck(client) {
   if (client.node.context.win?.lines.length) {

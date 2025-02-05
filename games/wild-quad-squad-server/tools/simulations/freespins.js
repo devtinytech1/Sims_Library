@@ -1,7 +1,7 @@
 const baseSettings = require('../../src/game/runner/configs/settings.js')
 const { KEY, TRIGGER } = require('../../../../src/game/runner/configs/static.cjs')
 const matrix = require('../simulations/matrix_controller')
-const { check_to_replace_wild_FS, replace_Wild_FS } = require('../../src/game/runner/controllers/features/wild_scatter_replace_feature.js')
+const { check_to_replace_wild_FS, replace_Wild_FS } = require('../../../../src/sims_data/features/wild_scatter_replace_feature.cjs')
 const baseSequences = require('../../src/game/runner/configs/sequences')
 const { handleFreeSpinsCascade, createCascadeEndFS } = require('../../tools/simulations/cascade.js')
 const mathUtils = require('../../../../src/utils/math.cjs')

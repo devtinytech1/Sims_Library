@@ -1,5 +1,5 @@
 
-const baseSettings = require('../../configs/settings.js')
+const baseSettings = require('../../../games/wild-quad-squad-server/src/game/runner/configs/settings.js')
 
 function bigWinCheck(client, model) {
   if (model?.total) {

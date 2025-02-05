@@ -1,4 +1,4 @@
-const baseSettings = require('../../configs/settings')
+const baseSettings = require('../../../games/wild-quad-squad-server/src/game/runner/configs/settings')
 function setMultiplierModel(currentContext, settings, sym) {
   (currentContext.multiplierForSymbols[sym]) === 1 ? (currentContext.multiplierForSymbols[sym] += 1) : (currentContext.multiplierForSymbols[sym] += settings.features.multiplier_upgrade)
   return currentContext.multiplierForSymbols
