@@ -1,4 +1,4 @@
-const rng = require('../../../rng')
+const rng = require('../../../../../../src/rng/index.cjs')
 
 async function getRandomItems(client, sequence, options) {
   const sequenceNew = sequence.map(el => el)

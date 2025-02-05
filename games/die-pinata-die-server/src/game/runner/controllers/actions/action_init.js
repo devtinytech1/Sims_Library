@@ -38,7 +38,6 @@ module.exports.execute = async function (client) {
 
     async function runBoardGeneration(state, trigger) {
       client.node.context = { matrix: await matrix.make(client, 'basegame', baseSettings.base.rows) }
-      // client.node.context = { matrix: baseSequences.get(client.gameId)['default_basegame_position']}
       linesController.makeWinModel(client, client.context)
       client.nextState = state
       client.nextTrigger = trigger || state
