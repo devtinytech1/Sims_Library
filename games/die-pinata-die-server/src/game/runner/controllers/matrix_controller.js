@@ -1,7 +1,7 @@
 
 const baseSequences = require('../../../../../../src/game/runner/configs/sequences.cjs')
 const baseSettings = require('../../../../../../src/game/runner/configs/settings.cjs')
-const random = require('../../../../../../src/math/random_controller.cjs')
+const random = require('../../../../../die-pinata-die-server/src/game/runner/math/random_controller')
 
 async function make(client, mode, rows) {
   if (baseSequences.get(client.gameId)['default_basegame_position'] && !client.node.state) {
