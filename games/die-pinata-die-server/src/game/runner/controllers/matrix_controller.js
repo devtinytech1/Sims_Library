@@ -20,20 +20,6 @@ async function make(client, mode, rows) {
   return matrix
 }
 
-function copy(client) {
-  client.matrix = client.prevContext.matrix.map(reel => [...reel])
-}
-
-function swapSymbols(matrix, target, symbol) {
-  return matrix.reduce((acc, reel) => {
-    acc.push(reel.reduce((newReel, sym) => {
-      newReel.push(sym === target ? symbol : sym)
-      return newReel
-    }, []))
-    return acc
-  }, [])
-}
-
 //find Jackpot symbol consecutively
 function foundSymbolsforJ(matrix, symbol) {
   let positionsOfJ = [];
@@ -57,4 +43,4 @@ function foundSymbolsforJ(matrix, symbol) {
   return positionsOfJ;
 }
 
-module.exports = { make, copy, swapSymbols, foundSymbolsforJ }
+module.exports = { make, foundSymbolsforJ }
