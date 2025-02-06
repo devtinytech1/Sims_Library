@@ -9,25 +9,25 @@ module.exports = {
     basegameProb: [100],
     basegameSet: [0],
 
-    basegame_respinProb:[100],
-    basegame_respinSet:[0],
+    basegame_respinProb: [100],
+    basegame_respinSet: [0],
 
-    freespins_0Prob:[100],
-    freespins_0Set:[0],
+    freespins_0Prob: [100],
+    freespins_0Set: [0],
 
-    freespins_respinProb : [100],
-    freespins_respinSet : [0],
-    
+    freespins_respinProb: [100],
+    freespins_respinSet: [0],
+
     sequenceMap: {
       basegame: 'basegame',
-      basegame_respin:'basegame_respin',
-      freespins_0:'freespins_0',
-      freespins_respin:'freespins_respin',
+      basegame_respin: 'basegame_respin',
+      freespins_0: 'freespins_0',
+      freespins_respin: 'freespins_respin',
     },
   },
 
   WI: 'W',
-  
+
   paytable: {
     W: { 6: 10 },
     H1: { 3: 0.5, 4: 1, 5: 1.5, 6: 2 },
@@ -45,10 +45,10 @@ module.exports = {
     diceRoll: {
       diceRollProb: [20, 80],
       diceRollOutcome: [true, false],
-      
+
       featureProb: [2, 1, 3],
       featureOutcome: ['Wild', 'Bonus', 'ReSpin'],
-      
+
       Bonus: {
         convertToBonusProb: [1, 1, 1, 1, 1, 1],
         convertToBonusOutcome: ['H1', 'H2', 'M1', 'M2', 'L1', 'L2']
@@ -59,7 +59,7 @@ module.exports = {
         convertToWildOutcome: ['H1', 'H2', 'M1', 'M2', 'L1', 'L2']
       },
 
-      ReSpin: { 
+      ReSpin: {
         respinProb: [1, 1, 1, 1, 1, 1],
         respinOutcome: ['H1', 'H2', 'M1', 'M2', 'L1', 'L2']
       }
@@ -67,24 +67,10 @@ module.exports = {
 
     //Freespin trigger
     spin: {
-      scatters:{ 
-        triggerSymbol: 'B',  
+      scatters: {
+        triggerSymbol: 'B',
         minTriggerCount: 5,
-        trigger : TRIGGER.FREESPINS,
-        triggers: [
-          {
-            found: 3,
-            count: 8,
-          },
-          {
-            found: 4,
-            count: 10,
-          },
-          {
-            found: 5,
-            count: 12,
-          },
-        ],
+        trigger: TRIGGER.FREESPINS,
       },
     },
 
@@ -106,7 +92,7 @@ module.exports = {
         fs_convertToWildOutcome: ['H1', 'H2', 'M1', 'M2', 'L1']
       },
 
-      fs_ReSpin: { 
+      fs_ReSpin: {
         fs_RespinProb: [2, 1, 1, 1, 1],
         fs_RespinOutcome: ['H1', 'H2', 'M1', 'M2', 'L1']
       }
