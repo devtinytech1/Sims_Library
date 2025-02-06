@@ -1,10 +1,6 @@
 
 const rng = require('../../../rng/index.cjs')
 
-function getBatchItems(sequence, count, batch) {
-  return [...sequence, ...sequence.slice(0, count)].splice(getBatchIndexEqualWeights(batch, sequence), count)
-}
-
 async function getRandomItems(client, sequence, count) {
   const pos = await getRandomInt(client, sequence.length)
   return pos > sequence.length ?
@@ -73,5 +69,4 @@ module.exports = {
   getRandomItems1,
   getRandomInt,
   getWeightResultIndex,
-  getBatchItems,
 }
