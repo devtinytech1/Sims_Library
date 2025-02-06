@@ -34,13 +34,6 @@ function swapSymbols(matrix, target, symbol) {
   }, [])
 }
 
-function foundSymbols(matrix, symbol) {
-  return matrix.reduce((acc, reel, col) => {
-    reel.forEach((sym, row) => sym === symbol && acc.push([col, row]))
-    return acc
-  }, [])
-}
-
 //find Jackpot symbol consecutively
 function foundSymbolsforJ(matrix, symbol) {
   let positionsOfJ = [];
@@ -64,4 +57,4 @@ function foundSymbolsforJ(matrix, symbol) {
   return positionsOfJ;
 }
 
-module.exports = { make, copy, swapSymbols, foundSymbols, foundSymbolsforJ }
+module.exports = { make, copy, swapSymbols, foundSymbolsforJ }

@@ -52,7 +52,7 @@ async function execute(client) {
     fgTotalWin = calculateFgTotalWin();
     jpTotalWin = calculateJpTotalWin();
     // Log round information and RTP for every 100 rounds
-    if ((i + 1) % 100 === 0) {
+    if ((i + 1) % 1000 === 0) {
       logRoundData(i + 1, client, bgTotalWin, fgTotalWin, jpTotalWin);
     }
   }

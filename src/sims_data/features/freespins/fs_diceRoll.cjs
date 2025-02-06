@@ -1,6 +1,6 @@
 const baseSettings = require('../../../../games/die-pinata-die-server/src/game/runner/configs/settings');
 const { getRandomItemByArrayWeights } = require('../../../../src/game/runner/math/main_random_controller.cjs');
-const matrix = require('../../../../games/die-pinata-die-server/src/game/runner/controllers/matrix_controller');
+const matrix = require('../../../../games/wild-quad-squad-server/tools/simulations/matrix_controller');
 
 const DICE_ROLL_PROB = 'fs_diceRollProb';
 const DICE_ROLL_OUTCOME = 'fs_diceRollOutcome';

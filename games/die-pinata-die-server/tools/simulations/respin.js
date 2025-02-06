@@ -1,6 +1,7 @@
 const baseSettings = require('../../src/game/runner/configs/settings');
 const matrix = require('../../src/game/runner/controllers/matrix_controller');
 const roundWin = require('../../../../src/sims_data/round_win_controller.cjs');
+const { foundSymbols } = require('../../../wild-quad-squad-server/tools/simulations/matrix_controller')
 
 // Replace symbols for the base game respin.
 function replaceSymbolsBG(client, diceRollFeature) {
@@ -21,7 +22,7 @@ function replaceSymbolsBG(client, diceRollFeature) {
         client.matrix[col][row] = baseSettings.base.Jackpot;
     });
 
-    const special = matrix.foundSymbols(client.matrix, baseSettings.base.Special);
+    const special = foundSymbols(client.matrix, baseSettings.base.Special);
     special.forEach(([col, row]) => {
         client.matrix[col][row] = randomSymbol;
     });
