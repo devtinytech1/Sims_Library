@@ -1,5 +1,5 @@
 const { round } = require('../../../../src/utils/math.cjs');
-const baseSettings = require('../../../../src/game/runner/configs/settings.cjs');
+const baseSettings = require('../../../../games/die-pinata-die-server/src/game/runner/configs/settings');
 const matrixController = require('../../../../games/die-pinata-die-server/src/game/runner/controllers/matrix_controller');
 
 function init(client) {

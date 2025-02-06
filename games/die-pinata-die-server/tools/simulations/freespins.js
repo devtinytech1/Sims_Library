@@ -1,7 +1,7 @@
 
 const foundMatrix = require('../../src/game/runner/controllers/matrix_controller')
-const baseSequences = require('../../../../src/game/runner/configs/sequences.cjs')
-const baseSettings = require('../../../../src/game/runner/configs/settings.cjs');
+const baseSequences = require('../../../die-pinata-die-server/src/game/runner/configs/sequences')
+const baseSettings = require('../../../die-pinata-die-server/src/game/runner/configs/settings');
 const matrix = require('../../src/game/runner/controllers/matrix_controller');
 const roundWin = require('../../../../src/sims_data/round_win_controller.cjs');
 const features = require('../../../../src/sims_data/features/features.cjs');

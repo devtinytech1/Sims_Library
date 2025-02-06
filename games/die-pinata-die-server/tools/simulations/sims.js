@@ -1,4 +1,4 @@
-const baseSettings = require('../../../../src/game/runner/configs/settings.cjs');
+const baseSettings = require('../../../die-pinata-die-server/src/game/runner/configs/settings');
 const { TRIGGER } = require('../../../../src/game/runner/configs/static.cjs');
 const matrix = require('../../src/game/runner/controllers/matrix_controller');
 const roundWin = require('../../../../src/sims_data/round_win_controller.cjs');

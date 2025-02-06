@@ -1,5 +1,5 @@
 
-const baseSettings = require('../../../../../../../src/game/runner/configs/settings.cjs')
+const baseSettings = require('../../../../../src/game/runner/configs/settings')
 const { TRIGGER } = require('../../../../../../../src/game/runner/configs/static.cjs')
 const features = require('../../../../../../../src/sims_data/features/features.cjs')
 const linesController = require('../lines_controller')

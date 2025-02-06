@@ -1,7 +1,7 @@
 /* eslint-disable import/order */
 
 const fs = require('fs')
-const filesForCheck = require('./configs/check_files.cjs').get()
+const filesForCheck = require('../../../games/die-pinata-die-server/src/game/runner/configs/check_files.js').get()
 const { execute } = require('../../../games/die-pinata-die-server/src/game/runner/controllers/actions_controller')
 const { getClient } = require('../../../src/models/client.cjs')
 const crypto = require('crypto')

@@ -1,5 +1,5 @@
 const mathUtils = require('../../../../../../src/utils/math.cjs')
-const baseSettings = require('../../../../../../src/game/runner/configs/settings.cjs'),
+const baseSettings = require('../../../../../die-pinata-die-server/src/game/runner/configs/settings'),
   wilds = baseSettings.base.wilds,
   scatters = baseSettings.base.scatters,
   itsWildSymbol = id => wilds.includes(id),

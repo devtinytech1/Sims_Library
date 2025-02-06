@@ -1,5 +1,5 @@
 
-const settingsByKey = { sequences94: require('./sequences94.cjs') }
+const settingsByKey = { sequences94: require('./sequences94.js') }
 
 module.exports.get = function (key) {
   if (!key) {

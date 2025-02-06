@@ -1,6 +1,6 @@
 
-const baseSequences = require('../../../../../../src/game/runner/configs/sequences.cjs')
-const baseSettings = require('../../../../../../src/game/runner/configs/settings.cjs')
+const baseSequences = require('../../../../../die-pinata-die-server/src/game/runner/configs/sequences.js')
+const baseSettings = require('../../../../../die-pinata-die-server/src/game/runner/configs/settings')
 const random = require('../../../../../die-pinata-die-server/src/game/runner/math/random_controller')
 
 async function make(client, mode, rows) {
