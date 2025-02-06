@@ -1,6 +1,6 @@
 const baseSettings = require('../../configs/settings.js')
 const { TRIGGER } = require('../../../../../../../src/game/runner/configs/static.cjs')
-const matrix = require('../matrix_controller.js')
+const matrix = require('../../../../../../../games/wild-quad-squad-server/tools/simulations/matrix_controller.js')
 
 module.exports.execute = async function (client) {
 
