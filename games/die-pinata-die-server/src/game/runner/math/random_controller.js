@@ -21,10 +21,6 @@ function getBatchIndexEqualWeights(value, values) {
   return Math.floor(value * values.length / batchValue) + 1
 }
 
-function getBatchResultEqualWeights(value, values) {
-  return values[getBatchIndexEqualWeights(value, values)]
-}
-
 function getBatchResult(value, weights, values) {
   const sum = weights.reduce((acc, val) => acc + val)
   const nValue = value * sum / batchValue
@@ -52,28 +48,11 @@ function getWeightResultIndex(weights, value) {
   return 0
 }
 
-async function getRandomItemByArrayWeights(client, weights, values) {
-  if (!weights || !values || weights.length !== values.length) {
-    return Promise.reject('weights.length !== values.length')
-  }
-  let sum = 0
-  try {
-    sum = weights.reduce((acc, val) => acc + val)
-  }
-  catch (e) {
-    sum = 0
-  }
-  const value = await getRandomInt(client, sum)
-  return value <= sum ? values[getWeightResultIndex(weights, value)] : Promise.reject('weights: value range')
-}
-
 module.exports = {
-  getRandomItemByArrayWeights,
   getRandomItems,
   getRandomInt,
   getBatch,
   getBatchResult,
   getWeightResultIndex,
   getBatchItems,
-  getBatchResultEqualWeights,
 }

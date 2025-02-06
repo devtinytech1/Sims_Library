@@ -1,6 +1,6 @@
 const baseSequences = require('../../src/game/runner/configs/sequences')
 const baseSettings = require('../../src/game/runner/configs/settings')
-const randomController = require('../../src/game/runner/math/random_controller')
+const randomController = require('../../../../src/game/runner/math/main_random_controller.cjs')
 const { checkClusterPays, getClusters, scatterPayWin, payWildClusterWin } = require('../../src/game/runner/controllers/lines_controller')
 const { checkRoundWin } = require('../../src/game/runner/controllers/round_win_controller')
 const { cascadeFeatureCheck } = require('../../../../src/sims_data/features/cascade_feature.cjs')
@@ -13,10 +13,6 @@ const symbolToFind = 'W';
 const minClusterSize = 5;
 
 async function make(client, spinMod, rows) {
-  // for recovery 
-  // if (baseSequences.get(client.gameId)['default_spin_position'] && !client.node.state) {
-  //   return baseSequences.get(client.gameId)['default_spin_position'];
-  // }
   const settings = baseSettings.get(client.gameId)
   if (settings.reelsSet[spinMod + '_Prob']) {
     const option = await randomController.getRandomItemByArrayWeights(client, settings.reelsSet[spinMod + '_Prob'],
@@ -24,7 +20,7 @@ async function make(client, spinMod, rows) {
     const result = [],
       sequences = baseSequences.get(client.gameId)[spinMod][option]
     const getReel = async function (ix) {
-      const body = await randomController.getRandomItems(client, sequences[ix], { count: rows, ix })
+      const body = await randomController.getRandomItems1(client, sequences[ix], { count: rows, ix })
       result.push(body.result)
       let condition = ix === baseSettings.base.cols - 1
       return condition ? result : await getReel(ix + 1)
@@ -279,6 +275,5 @@ async function checkReavealedWild(client, matrix) {
   symbolRevealFeatureCheck(client)
   return matrix
 }
-
 
 module.exports = { make, foundSymbols, check, checkReavealedWild, getCascade }

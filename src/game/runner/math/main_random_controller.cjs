@@ -12,10 +12,6 @@ async function getRandomItems(client, sequence, count) {
     [...sequence, ...sequence.slice(0, count)].splice(pos, count)
 }
 
-function getBatchResultEqualWeights(value, values) {
-  return values[getBatchIndexEqualWeights(value, values)]
-}
-
 async function getRandomInt(client, bound) {
   if (process.env.MODE === 'dev') {
     return await rng.random({ bound })
@@ -52,11 +48,30 @@ async function getRandomItemByArrayWeights(client, weights, values) {
   return value <= sum ? values[getWeightResultIndex(weights, value)] : Promise.reject('weights: value range')
 }
 
+async function getRandomItems1(client, sequence, options) {
+  const sequenceNew = sequence.map(el => el)
+  for (let i = 0; i < options.count; i++) {
+    sequenceNew.push(sequence[i])
+  }
+  const value = await getRandomInt(client, sequence.length)
+  if (value > sequence.length) {
+    return Promise.reject('items value range')
+  }
+  if (options.count === 1) {
+    return sequenceNew[value]
+  }
+  options.result = []
+  for (let i = 0; i < options.count; i++) {
+    options.result.push(sequenceNew[i + value])
+  }
+  return options
+}
+
 module.exports = {
   getRandomItemByArrayWeights,
   getRandomItems,
+  getRandomItems1,
   getRandomInt,
   getWeightResultIndex,
   getBatchItems,
-  getBatchResultEqualWeights,
 }
