@@ -1,22 +1,11 @@
 const mathUtils = require('../../../../../../src/utils/math.cjs')
-const baseSettings = require('../../../../../die-pinata-die-server/src/game/runner/configs/settings'),
+const baseSettings = require('../../../../../die-pinata-die-server/src/game/runner/configs/settings')
+const { getLineModel } = require('../../../../../../src/game/runner/controllers/main_lines_controller.cjs')
+
   wilds = baseSettings.base.wilds,
   scatters = baseSettings.base.scatters,
   itsWildSymbol = id => wilds.includes(id),
   itsScatterSymbol = id => scatters.includes(id)
-
-function getLineModel(lineId, win, position, symbolId, trigger, len, count) {
-  return {
-    id: lineId,
-    win: win,
-    len: len,
-    count: count,
-    trigger: trigger,
-    mask: position,
-    symbol: symbolId,
-    multi: 1,
-  }
-}
 
 function makeWinModel(client, currentContext) {
   currentContext.win = {
