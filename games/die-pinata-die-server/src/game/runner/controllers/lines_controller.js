@@ -28,22 +28,6 @@ function makeWinModel(client, currentContext) {
   return currentContext.win
 }
 
-function setLineMulti(winModel, line, multi) {
-  winModel.total -= line.win
-  line.win /= line.multi
-  line.multi *= multi
-  line.win = mathUtils.round(line.win * line.multi)
-  winModel.total = mathUtils.round(winModel.total + line.win)
-}
-
-function applyAllLinesMultiplier(currentContext, multi) {
-  currentContext.win.lines.forEach(line => setLineMulti(currentContext.win, line, multi))
-}
-
-function applySymbolLinesMultiplier(currentContext, sym, multi) {
-  currentContext.win.lines.forEach(line => sym === line.symbol && setLineMulti(currentContext.win, line, multi))
-}
-
 function checkWays(client, matrix) {
   const settings = baseSettings.get(client.gameId),
     symbols = matrix.reduce((acc, reel) => {
@@ -108,4 +92,4 @@ function checkWays(client, matrix) {
   wildsStartCount && nextWay(settings.WI, symbols, 1, settings.WI, wildsStartCount)
 }
 
-module.exports = { checkWays, setLineMulti, applyAllLinesMultiplier, applySymbolLinesMultiplier, makeWinModel }
+module.exports = { checkWays, makeWinModel }
