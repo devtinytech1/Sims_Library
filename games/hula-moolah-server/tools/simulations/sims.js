@@ -16,7 +16,7 @@ let freeSpinTriggerCount = 0;
 module.exports.execute = async function (client) {
     console.log("Execute function started");
     initializeClient(client);
-    for (let i = 0; i < 10000000; i++) {
+    for (let i = 0; i < 1000000; i++) {
         totalSpins++;
         await playRound(client);
         // Log round information and RTP for every 1000 rounds

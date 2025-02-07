@@ -60,7 +60,7 @@ function logFeatureRTP(roundNumber, client, logParams) {
 }
 
 function logToFile(logData) {
-    const filePath = './logRTPFile.txt';
+    const filePath = './logRTPFile04.txt';
     fs.writeFileSync(filePath, logData + '\n', 'utf8');
     // fs.appendFileSync(filePath, logData + '\n', 'utf8');
 }

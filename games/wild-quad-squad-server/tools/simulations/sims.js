@@ -9,7 +9,7 @@ const { scatterFeatureCheck } = require('../../tools/simulations/Features/scatte
 
 async function execute(client) {
   initializeClient(client);
-  for (let i = 0; i < 200000; i++) {
+  for (let i = 0; i < 1000000; i++) {
     await playRound(client);
     if ((i + 1) % 1000 === 0) {
       logRoundStats(i + 1, client.node.spinBet, client.context.totalBaseGameWin, client.context.totalBGCascadeWin, client.context.totalFreeGameWin, client.context.totalFGCascadeWin);
