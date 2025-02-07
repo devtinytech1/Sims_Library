@@ -1,7 +1,7 @@
 
 const mathUtils = require('../../../../../../src/utils/math.cjs')
 const baseSettings = require('../configs/settings.js')
-const { TRIGGER } = require('../configs/static')
+const { TRIGGER } = require('../../../../../../src/game/runner/configs/static.cjs')
 const features = require('./features/features')
 const { scatterFeatureCheck } = require('./features/scatters_feature')
 

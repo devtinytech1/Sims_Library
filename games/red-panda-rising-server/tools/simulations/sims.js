@@ -1,6 +1,6 @@
 
 const baseSettings = require('../../src/game/runner/configs/settings')
-const { TRIGGER } = require('../../src/game/runner/configs/static')
+const { TRIGGER } = require('../../../../src/game/runner/configs/static.cjs')
 const { foundSymbols } = require('../../src/game/runner/math/found_symbols')
 const features = require('../../src/game/runner/controllers/features/features')
 const { transformReelToWildSymbols } = require('../../src/game/runner/controllers/features/symbol_replace')

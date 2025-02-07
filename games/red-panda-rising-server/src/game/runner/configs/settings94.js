@@ -1,4 +1,4 @@
-const { TRIGGER } = require('./static')
+const { TRIGGER } = require('../../../../../../src/game/runner/configs/static.cjs')
 
 module.exports = {
   name: '96',

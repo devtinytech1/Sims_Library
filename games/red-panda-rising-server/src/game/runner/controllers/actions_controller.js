@@ -1,7 +1,7 @@
 
 const mathUtils = require('../../../../../../src/utils/math.cjs')
 const { compose } = require('../compose')
-const { KEY, TRIGGER } = require('../configs/static')
+const { KEY, TRIGGER } = require('../../../../../../src/game/runner/configs/static.cjs')
 
 const actions = {
   init: require('./actions/action_init.js'),

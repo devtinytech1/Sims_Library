@@ -1,6 +1,6 @@
 
 const settingsByKey = { settings94: require('./settings94') },
-  { WIN } = require('./static')
+  { WIN } = require('../../../../../../src/game/runner/configs/static.cjs')
 
 const base = {
   version: 'v1.0.0',

@@ -1,5 +1,5 @@
 
-const { TRIGGER } = require('../../configs/static')
+const { TRIGGER } = require('../../../../../../../src/game/runner/configs/static.cjs')
 const { foundSymbols } = require('../../math/found_symbols')
 const freespinsModel = require('../../../../../tools/simulations/freespinsModel')
 const { getWildReelMultiplier } = require('../features/wild_reel_multiplier_feature')
