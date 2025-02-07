@@ -1,7 +1,6 @@
 /* eslint-disable import/order */
 
 const fs = require('fs')
-const { error } = require('../../tools/log')
 const filesForCheck = require('./configs/check_files.js').get()
 const { getNode } = require('./controllers/node_controller')
 const { getClient } = require('../../../../../src/models/client.cjs')
@@ -21,7 +20,7 @@ async function audit() {
                 .digest('hex')
             }
             else {
-              error({ err, msg: 'getSum' })
+
             }
             res()
           }),

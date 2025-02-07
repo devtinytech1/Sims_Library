@@ -1,5 +1,5 @@
 
-const rng = require('../../../rng')
+const rng = require('../../../../../../src/rng/index.cjs')
 const batchValue = require('../configs/settings').base.batchValue
 
 function getBatchItems(sequence, count, batch) {

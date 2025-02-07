@@ -1,5 +1,4 @@
 
-const { error } = require('../tools/log')
 const { round } = require('../../../../src/utils/math.cjs')
 const { init } = require('./runner')
 
@@ -14,8 +13,8 @@ function make() {
     const requestData = { sessionId, request, winCap, betMultiplier, state, regulation }
     const { data, gameState, gameRoundOver } = await init(requestData, body.config)
 
-    if (data.error) {
-      error(data)
+    if (data) {
+
     }
     else {
       data.settings.bets = data.settings.bets.map(bet => round(bet * betMultiplier))

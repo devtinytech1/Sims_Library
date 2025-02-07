@@ -1,4 +1,4 @@
-const log = require('../tools/log')
+
 const { play } = require('./runner')
 
 function make() {
@@ -12,7 +12,7 @@ function make() {
     const requestData = { sessionId, request, winCap, betMultiplier, state, roundStart }
     const { data, gameState, totalBet, gameRoundOver, totalWin } = await play(requestData)
 
-    log.info({ action: 'play out', data, totalBet, gameRoundOver, totalWin })
+
 
     return {
       gameState,
