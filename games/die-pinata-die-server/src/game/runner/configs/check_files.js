@@ -11,7 +11,6 @@ module.exports.get = () => {
     'expanding_controller.js': start + '/src/game/runner/controllers/expanding_controller.js',
     'actions_controller.js': start + '/src/game/runner/controllers/actions_controller.js',
     'found_symbols.js': start + '/src/game/runner/math/found_symbols.js',
-    'random_controller.js': start + '/src/game/runner/math/random_controller.js',
     'play.js': start + '/src/game/play.js',
   }
 }

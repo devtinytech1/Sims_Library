@@ -63,8 +63,20 @@ async function getRandomItems1(client, sequence, options) {
   return options
 }
 
+async function getRandomItem(client, sequence, options) {
+  const value = await getRandomInt(client, sequence.length)
+  if (value > sequence.length) {
+    return Promise.reject('items value range')
+  }
+ 
+  options.result = []
+  options.result.push(sequence[value])
+  return options
+}
+
 module.exports = {
   getRandomItemByArrayWeights,
+  getRandomItem,
   getRandomItems,
   getRandomItems1,
   getRandomInt,
