@@ -4,7 +4,7 @@ const path = require('path')
 require('dotenv').config()
 require('dotenv').config({ path: path.join(__dirname, '../.env') })
 
-const settings = require('../../../src/game/runner/bishop/settings/bishopSettings')
+const settings = require('../../../../../src/game/runner/bishop/settings/bishopSettings.cjs')
 const call = require('./controllers/call')
 const baseCallBody = require('./models/baseCallBody')
 const context = require('./models/context')

@@ -1,6 +1,6 @@
 
 const context = require('../models/context')
-const settings = require('../settings/bishopSettings')
+const settings = require('../../../../../../../src/game/runner/bishop/settings/bishopSettings.cjs')
 
 const baseCallBody = index => {
   if (!context.nextTrigger) {
