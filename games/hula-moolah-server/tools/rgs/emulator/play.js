@@ -1,5 +1,5 @@
 const game = require('../../../src/game/play')
-const { maximumWinCap, currencyMultiplier, rtp, configuration } = require('./config')
+const { maximumWinCap, currencyMultiplier, rtp, configuration } = require('../../../../../tools/rgs/emulator/config')
 const db = require('./db')
 
 async function execute(params) {

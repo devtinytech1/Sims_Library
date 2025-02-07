@@ -1,6 +1,6 @@
 
 const init = require('./init')
-const open = require('./open')
+const open = require('../../../../../tools/rgs/emulator/open')
 const play = require('./play')
 
 const endpoints = {}
