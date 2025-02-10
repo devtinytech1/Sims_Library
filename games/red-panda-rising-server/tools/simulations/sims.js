@@ -46,17 +46,17 @@ async function playRound(client, settings) {
   features.init(client)
   client.getFeatures().isScatter = false
 
-  const expandingWildPosition = await getExpandingWildPosition(client, settings);
-  processWildSymbols(client, expandingWildPosition);
+  client.getFeatures().expandingWildPosition = await getExpandingWildPosition(client, settings);
+  processWildSymbols(client, client.getFeatures().expandingWildPosition);
   checkDefaultLines(client, client.matrix)
   await processScatterSymbols(client, settings);
-  await processRoundWin(client, expandingWildPosition);
+  await processRoundWin(client, client.getFeatures().expandingWildPosition);
 
-  // await scatterFeatureCheck(client, client.matrix, settings.features.spin, TRIGGER.SPIN, TRIGGER.SPIN)  // check a triggering of free game bonus feature
-  // let isfsTriggered = client.getFeatures().isScatter
-  // if (isfsTriggered) {
-  //   totalScatterSpins++
-  // }
+  await scatterFeatureCheck(client, client.matrix, settings.features.spin, TRIGGER.SPIN, TRIGGER.SPIN)  // check a triggering of free game bonus feature
+  let isfsTriggered = client.getFeatures().isScatter
+  if (isfsTriggered) {
+    totalScatterSpins++
+  }
 
   if (client.node.context.freespins && client.getFreespins().total) {
     let fswin = client.getFreespins().total

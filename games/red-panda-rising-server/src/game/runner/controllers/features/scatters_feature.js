@@ -4,6 +4,7 @@ const { foundSymbols } = require('../../math/found_symbols')
 const freespinsModel = require('../../../../../tools/simulations/freespinsModel')
 const { getWildReelMultiplier } = require('../features/wild_reel_multiplier_feature')
 const baseSequences = require('../../configs/sequences')
+const { execute } = require('../../../../../tools/simulations/freespins')
 
 async function scatterFeatureCheck(client, matrix, settings) {
 
@@ -21,11 +22,11 @@ async function scatterFeatureCheck(client, matrix, settings) {
     const [extraCount, carryForwardExpandingWildSymbol] = countAdditionalFreespin(mask, expandingWildPos, settings)
 
     const freegameCount = settings.scatters.freespin_count + extraCount
-    client.nextTrigger = TRIGGER.FREESPINS
 
     setFreespinModel(client, freegameCount, carryForwardExpandingWildSymbol, mask)
     await setReelMultiplier(client)
 
+    await execute(client)
   }
 }
 

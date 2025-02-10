@@ -61,7 +61,6 @@ async function execute(client) {
         await toCheckWildFeatureCalc(client)
         await processRoundWin(client)
     }
-    console.log('End Freespin Round')
 }
 
 module.exports = { execute }
