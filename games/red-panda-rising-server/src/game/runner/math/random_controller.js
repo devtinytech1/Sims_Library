@@ -6,15 +6,6 @@ function getBatchItems(sequence, count, batch) {
   return [...sequence, ...sequence.slice(0, count)].splice(getBatchIndexEqualWeights(batch, sequence), count)
 }
 
-/*
-async function getRandomItems(client, sequence, count) {
-  const pos = await getRandomInt(client, sequence.length)
-  return pos > sequence.length ?
-    Promise.reject('items value range') :
-    [...sequence, ...sequence.slice(0, count)].splice(pos, count)
-}
-*/
-
 async function getRandomItems(client, sequence, options) {
   const sequenceNew = sequence.map(el => el)
   for (let i = 0; i < options.count; i++) {
@@ -88,16 +79,11 @@ async function getRandomItemByArrayWeights(client, weights, values) {
   return value <= sum ? values[getWeightResultIndex(weights, value)] : Promise.reject('weights: value range')
 }
 
-function spliceItemWV(weights, values, ix) {
-  weights.splice(ix, 1)
-  values.splice(ix, 1)
-}
 
 module.exports = {
   getRandomItemByArrayWeights,
   getRandomItems,
   getRandomInt,
-  spliceItemWV,
   getBatch,
   getBatchResult,
   getWeightResultIndex,
