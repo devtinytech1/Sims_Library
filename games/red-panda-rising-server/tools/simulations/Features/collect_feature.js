@@ -1,7 +1,7 @@
-const { round } = require('../../../../../../../src/utils/math.cjs')
-const baseSettings = require('../../configs/settings')
-const { getRandomItemByArrayWeights } = require('../../math/random_controller')
-const matrixController = require('../matrix_controller')
+const { round } = require('../../../../../src/utils/math.cjs')
+const baseSettings = require('../../../../red-panda-rising-server/src/game/runner/configs/settings')
+const { getRandomItemByArrayWeights } = require('../../../../red-panda-rising-server/src/game/runner/math/random_controller')
+const matrixController = require('../../../../red-panda-rising-server/src/game/runner/controllers/matrix_controller')
 
 function setModel(client) {
   const model = client.getFeatures().collect = {

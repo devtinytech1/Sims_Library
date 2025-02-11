@@ -1,7 +1,7 @@
 
 const mathUtils = require('../../../../../../src/utils/math.cjs')
-
 const baseSettings = require('../configs/settings.js'),
+
   wilds = baseSettings.base.wilds,
   scatters = baseSettings.base.scatters,
   itsWildSymbol = id => wilds.includes(id),
@@ -38,14 +38,6 @@ function setLineMulti(winModel, line, multi) {
   line.multi *= multi
   line.win = mathUtils.round(line.win * line.multi)
   winModel.total = mathUtils.round(winModel.total + line.win)
-}
-
-function applyAllLinesMultiplier(currentContext, multi) {
-  currentContext.win.lines.forEach(line => setLineMulti(currentContext.win, line, multi))
-}
-
-function applySymbolLinesMultiplier(currentContext, sym, multi) {
-  currentContext.win.lines.forEach(line => sym === line.symbol && setLineMulti(currentContext.win, line, multi))
 }
 
 function checkWays(client, matrix) {
@@ -158,4 +150,4 @@ function getScatterWin(client, mask) {
   winModel.total = mathUtils.round(winModel.total + scatterWinAmount)
 }
 
-module.exports = { checkWays, setLineMulti, applyAllLinesMultiplier, applySymbolLinesMultiplier, makeWinModel, checkDefaultLines, getScatterWin }
+module.exports = { checkWays, setLineMulti, makeWinModel, checkDefaultLines, getScatterWin }

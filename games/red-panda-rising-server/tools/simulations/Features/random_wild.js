@@ -1,7 +1,7 @@
 
-const baseSettings = require('../../configs/settings')
-const random = require('../../math/random_controller')
-const matrix = require('../matrix_controller')
+const baseSettings = require('../../../../red-panda-rising-server/src/game/runner/configs/settings')
+const random = require('../../../../red-panda-rising-server/src/game/runner/math/random_controller')
+const matrix = require('../../../../red-panda-rising-server/src/game/runner/controllers/matrix_controller')
 
 function getModel(client) {
   const model = client.getFeatures().randomWild = {

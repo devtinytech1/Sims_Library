@@ -1,6 +1,6 @@
 
-const { getRandomItemByArrayWeights } = require('../../../../src/game/runner/math/random_controller.js')
-const baseSettings = require('../../../../src/game/runner/configs/settings')
+const { getRandomItemByArrayWeights } = require('../../../../red-panda-rising-server/src/game/runner/math/random_controller')
+const baseSettings = require('../../../../red-panda-rising-server/src/game/runner/configs/settings')
 
 async function executeFreegameWildReelMultiplierFeature(client) {
   const settings = baseSettings.get(client.gameId)

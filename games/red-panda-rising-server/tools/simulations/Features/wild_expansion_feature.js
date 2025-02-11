@@ -1,5 +1,5 @@
-const { getRandomItemByArrayWeights } = require('../../math/random_controller')
-const { doesSymbolExist } = require('../../math/found_symbols')
+const { getRandomItemByArrayWeights } = require('../../../../red-panda-rising-server/src/game/runner/math/random_controller')
+const { doesSymbolExist } = require('../../../../red-panda-rising-server/src/game/runner/math/found_symbols')
 
 async function wildFeatureCheck(client, matrix, settings) {
   const sym = settings.wild.symbol

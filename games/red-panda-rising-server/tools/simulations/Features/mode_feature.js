@@ -1,5 +1,5 @@
-const baseSettings = require('../../configs/settings')
-const matrix = require('../matrix_controller')
+const baseSettings = require('../../../../red-panda-rising-server/src/game/runner/configs/settings')
+const matrix = require('../../../../red-panda-rising-server/src/game/runner/controllers/matrix_controller')
 
 function getModel(client, add, mask) {
   if (client.getMode) {

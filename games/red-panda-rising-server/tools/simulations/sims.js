@@ -3,8 +3,8 @@ const baseSettings = require('../../src/game/runner/configs/settings')
 const { TRIGGER } = require('../../../../src/game/runner/configs/static.cjs')
 const { foundSymbols } = require('../../src/game/runner/math/found_symbols')
 const features = require('../../../red-panda-rising-server/tools/simulations/Features/features.js')
-const { transformReelToWildSymbols } = require('../../src/game/runner/controllers/features/symbol_replace')
-const { wildFeatureCheck } = require('../../src/game/runner/controllers/features/wild_expansion_feature.js')
+const { transformReelToWildSymbols } = require('../../../red-panda-rising-server/tools/simulations/features/symbol_replace.js')
+const { wildFeatureCheck } = require('../../../red-panda-rising-server/tools/simulations/features/wild_expansion_feature.js')
 const { checkDefaultLines, getScatterWin } = require('../../src/game/runner/controllers/lines_controller')
 const matrixController = require('../../src/game/runner/controllers/matrix_controller')
 const roundWin = require('../../tools/simulations/round_win_controller.js')
@@ -13,7 +13,7 @@ const { handleBGWinsData, logNoWinNoFeatureFrequency } = require('../../tools/si
 const { handleBGScatterWinsData, logNoWinScatterFeatureFrequency } = require('./Log Files/logBGScattersData.js')
 const { handleBGNudgeWinsData, logNoWinNudgeFeatureFrequency } = require('./Log Files/logBGNudgeData.js')
 const { handleBGNoNudgeWinsData, logNoWinNoNudgeFeatureFrequency } = require('../../tools/simulations/Log Files/logBGNoNudgeData.js')
-const { scatterFeatureCheck } = require('../../src/game/runner/controllers/features/scatters_feature')
+const { scatterFeatureCheck } = require('../../../red-panda-rising-server/tools/simulations/features/scatters_feature.js')
 
 let totalSpins = 0, totalScatterSpins = 0, totalNudgeSpins = 0, totalNoNudgeSpins = 0;
 let totalBaseGameWin = 0, totalScatterWin = 0;

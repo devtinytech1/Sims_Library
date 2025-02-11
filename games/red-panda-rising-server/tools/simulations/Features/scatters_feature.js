@@ -1,10 +1,10 @@
 
-const { TRIGGER } = require('../../../../../../../src/game/runner/configs/static.cjs')
-const { foundSymbols } = require('../../math/found_symbols')
-const freespinsModel = require('../../../../../tools/simulations/freespinsModel')
-const { getWildReelMultiplier } = require('../features/wild_reel_multiplier_feature')
-const baseSequences = require('../../configs/sequences')
-const { execute } = require('../../../../../tools/simulations/freespins')
+const { TRIGGER } = require('../../../../../src/game/runner/configs/static.cjs')
+const { foundSymbols } = require('../../../../red-panda-rising-server/src/game/runner/math/found_symbols')
+const freespinsModel = require('../../../../red-panda-rising-server/tools/simulations/freespinsModel')
+const { getWildReelMultiplier } = require('../../../../red-panda-rising-server/tools/simulations/features/wild_reel_multiplier_feature')
+const baseSequences = require('../../../../red-panda-rising-server/src/game/runner/configs/settings')
+const { execute } = require('../../../../red-panda-rising-server/tools/simulations/freespins')
 
 async function scatterFeatureCheck(client, matrix, settings) {
 
