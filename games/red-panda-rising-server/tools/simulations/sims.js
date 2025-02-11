@@ -2,7 +2,7 @@
 const baseSettings = require('../../src/game/runner/configs/settings')
 const { TRIGGER } = require('../../../../src/game/runner/configs/static.cjs')
 const { foundSymbols } = require('../../src/game/runner/math/found_symbols')
-const features = require('../../src/game/runner/controllers/features/features')
+const features = require('../../../red-panda-rising-server/tools/simulations/Features/features.js')
 const { transformReelToWildSymbols } = require('../../src/game/runner/controllers/features/symbol_replace')
 const { wildFeatureCheck } = require('../../src/game/runner/controllers/features/wild_expansion_feature.js')
 const { checkDefaultLines, getScatterWin } = require('../../src/game/runner/controllers/lines_controller')
@@ -22,7 +22,7 @@ let totalFSWin = 0;
 async function execute(client) {
   initializeClient(client);
   const settings = baseSettings.get(client.gameId)
-  for (let i = 0; i < 1000000; i++) {
+  for (let i = 0; i < 10000000; i++) {
     totalSpins++;
     await playRound(client, settings);
     if ((i + 1) % 100 === 0) {

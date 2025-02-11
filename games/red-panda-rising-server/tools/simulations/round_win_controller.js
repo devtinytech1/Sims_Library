@@ -1,6 +1,6 @@
 
 const mathUtils = require('../../../../src/utils/math.cjs')
-const features = require('../../src/game/runner/controllers/features/features')
+const features = require('../../../red-panda-rising-server/tools/simulations/Features/features.js')
 
 async function check(client) {
   let win = client.getWinModel().total || 0

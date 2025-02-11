@@ -1,7 +1,7 @@
 const baseSettings = require('../../src/game/runner/configs/settings')
 const { TRIGGER } = require('../../../../src/game/runner/configs/static.cjs')
 const freespinsModel = require('../../tools/simulations/freespinsModel.js')
-const features = require('../../src/game/runner/controllers/features/features')
+const features = require('../../../red-panda-rising-server/tools/simulations/Features/features.js')
 const { transformReelToWildSymbols } = require('../../src/game/runner/controllers/features/symbol_replace')
 const { isWildSymbolOnMatrix } = require('../../src/game/runner/controllers/features/wild_expansion_feature.js')
 const { executeFreegameWildReelMultiplierFeature } = require('../../src/game/runner/controllers/features/wild_reel_multiplier_feature')

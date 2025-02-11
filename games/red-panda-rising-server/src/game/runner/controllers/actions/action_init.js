@@ -1,7 +1,7 @@
 
 const baseSettings = require('../../configs/settings.js')
 const { TRIGGER } = require('../../../../../../../src/game/runner/configs/static.cjs')
-const features = require('../features/features')
+const features = require('../../../../../../red-panda-rising-server/tools/simulations/Features/features.js')
 const linesController = require('../lines_controller')
 const matrix = require('../matrix_controller')
 
