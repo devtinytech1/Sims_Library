@@ -4,7 +4,7 @@ const fs = require('fs')
 
 const filesForCheck = require('./configs/check_files.js').get()
 const { execute } = require('./controllers/actions_controller')
-const { getClient } = require('./models/client')
+const { getClient } = require('../../../../../src/models/client.cjs')
 const crypto = require('crypto')
 
 async function audit() {
