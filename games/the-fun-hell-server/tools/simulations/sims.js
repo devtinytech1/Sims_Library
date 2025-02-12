@@ -9,9 +9,7 @@ const { logRoundStats, logFeatureRTP } = require('../../../the-fun-hell-server/t
 const { handleBGWinsData, logNoWinNoFeatureFrequency } = require('./LogFiles/logBGData');
 
 let totalBasegameWin = 0;
-
 let totalFSgameWin = 0;
-
 let totalSpins = 0;
 
 async function execute(client) {
@@ -19,7 +17,7 @@ async function execute(client) {
   const settings = baseSettings.get(client.gameId);
   let bgTotalWin = 0, fgTotalWin = 0
 
-  for (let i = 0; i < 10000000000; i++) {
+  for (let i = 0; i < 1000000; i++) {
     totalSpins++;
     await playRound(client, settings);
     bgTotalWin = calculateBgTotalWin();
