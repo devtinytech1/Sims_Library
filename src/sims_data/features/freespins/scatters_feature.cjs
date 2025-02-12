@@ -1,4 +1,4 @@
-const matrix_controller = require('../../../../games/wild-quad-squad-server/tools/simulations/matrix_controller');
+const matrix_controller = require('../../../../src/game/runner/math/foundSymbols.cjs');
 const { initFreespins } = require('../../../../games/die-pinata-die-server/tools/simulations/freespins');
 
 //To check the freespin triggered or not based on the condition

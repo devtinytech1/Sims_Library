@@ -1,7 +1,7 @@
 const mathUtils = require('../../../../../src/utils/math.cjs');
 const baseSettings = require('../../../src/game/runner/configs/settings');
 const random = require('../../../src/game/runner/math/random_controller');
-const matrixController = require('../../../src/game/runner/controllers/matrix_controller');
+const matrixController = require('../../../../../src/game/runner/math/foundSymbols.cjs');
 // create model for easch spin
 function getWheelModel(value, values, total, spinCount, respin, level, stopIndex) {
   return {
