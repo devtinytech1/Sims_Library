@@ -1,5 +1,5 @@
 
-const { TRIGGER } = require('../../configs/static')
+const { TRIGGER } = require('../../../../../../../src/game/runner/configs/static.cjs')
 const actions = require('../../controllers/actions_controller')
 const { getClient } = require('../../models/client')
 const context = require('../models/context')

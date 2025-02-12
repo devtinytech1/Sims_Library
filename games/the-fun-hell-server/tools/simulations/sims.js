@@ -1,5 +1,5 @@
 const baseSettings = require('../../src/game/runner/configs/settings');
-const { TRIGGER } = require('../../src/game/runner/configs/static');
+const { TRIGGER } = require('../../../../src/game/runner/configs/static.cjs');
 const matrix = require('../../src/game/runner/controllers/matrix_controller');
 const roundWin = require('../../tools/simulations/round_win_controller');
 const { round } = require('../../../../src/utils/math.cjs');

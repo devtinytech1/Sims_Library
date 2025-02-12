@@ -1,6 +1,6 @@
 
 const baseSettings = require('../../configs/settings.js')
-const { TRIGGER } = require('../../configs/static')
+const { TRIGGER } = require('../../../../../../../src/game/runner/configs/static.cjs')
 const features = require('../features/features')
 const linesController = require('../lines_controller')
 const matrix = require('../matrix_controller')

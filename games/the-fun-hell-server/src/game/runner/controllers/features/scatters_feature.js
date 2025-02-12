@@ -1,5 +1,5 @@
 
-const { TRIGGER } = require('../../configs/static')
+const { TRIGGER } = require('../../../../../../../src/game/runner/configs/static.cjs')
 const matrixController = require('../matrix_controller')
 
 async function scatterFeatureCheck(client, settings) 

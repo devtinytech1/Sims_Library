@@ -1,7 +1,7 @@
 const cheatSettings = require('../../../../src/game/runner/bishop/settings/cheatSettings')
 const cheatPool = require('../../../../../../src/rng/pool.cjs')
 const context = require('../models/context')
-const { CHEATS } = require('../models/static')
+const { CHEATS } = require('../../../../../../src/game/runner/configs/static.cjs')
 
 const infoOn = process.env.CHEATS_INFO === 'true'
 

@@ -1,4 +1,4 @@
-const { KEY, TRIGGER } = require('../../configs/static')
+const { KEY, TRIGGER } = require('../../../../../../../src/game/runner/configs/static.cjs')
 const features = require('../features/features')
 
 module.exports.execute = async function (client) {

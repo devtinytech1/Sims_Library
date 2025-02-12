@@ -1,6 +1,6 @@
 
 const baseSettings = require('../../configs/settings')
-const { KEY, TRIGGER } = require('../../configs/static')
+const { KEY, TRIGGER } = require('../../../../../../../src/game/runner/configs/static.cjs')
 const features = require('../features/features')
 const matrix = require('../matrix_controller')
 const roundWin = require('../round_win_controller')

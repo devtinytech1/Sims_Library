@@ -1,6 +1,6 @@
 
 const baseSettings = require('../configs/settings')
-const { TRIGGER } = require('../configs/static')
+const { TRIGGER } = require('../../../../../../src/game/runner/configs/static.cjs')
 
 function copy(client) {
   const prev = client.prevContext.freespins,
