@@ -38,21 +38,5 @@ function doesSymbolExist(matrix, symbolKey, col) {
   return [isExist, pos]
 }
 
-function isWildParticipateInWin(currentContext,line){
-  let wildReel=currentContext.freespins.expandingWildPos
-  for (let i = 0; i < wildReel.length; i++) {
-     if(isExpandedWildSymbolOnWinLine(line,wildReel[i][0])) return true
-  }
-  return false
-}
 
-function isExpandedWildSymbolOnWinLine(line,wildReel){
-  for (let k = 0; k < line.mask.length; k++) {
-    if (line.mask[k][0] === wildReel) {
-      return true
-    }
-  }
-  return false
-}
-
-module.exports = { foundSymbols,doesSymbolExist,isWildParticipateInWin,isExpandedWildSymbolOnWinLine }
+module.exports = { foundSymbols,doesSymbolExist }

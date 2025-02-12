@@ -41,10 +41,6 @@ function setLineMulti(winModel, line, multi) {
   winModel.total = mathUtils.round(winModel.total + line.win)
 }
 
-function applyAllLinesMultiplier(currentContext, multi) {
-  currentContext.win.lines.forEach(line => setLineMulti(currentContext.win, line, multi))
-}
-
 function applySymbolLinesMultiplier(currentContext, sym, multi) {
   currentContext.win.lines.forEach(line => sym === line.symbol && setLineMulti(currentContext.win, line, multi))
 }
@@ -138,4 +134,4 @@ function checkDefaultLines(client, matrix) {
   }
 }
 
-module.exports = { setLineMulti, applyAllLinesMultiplier, applySymbolLinesMultiplier, makeWinModel, checkDefaultLines }
+module.exports = { setLineMulti, applySymbolLinesMultiplier, makeWinModel, checkDefaultLines }
