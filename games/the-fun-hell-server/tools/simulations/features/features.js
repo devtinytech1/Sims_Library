@@ -1,9 +1,6 @@
 
 const EXP = {
   winType: require('../../../src/game/runner/controllers/features/win_type_feature'),
-  diceRoll: require('../features/dice_feature'),
-  fs_diceRoll: require('../features/fs_diceRoll'),
-  prizePot: require('../features/prize_pot_feature')
 }
 
 function init(client) {
