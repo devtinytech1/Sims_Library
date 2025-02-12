@@ -6,9 +6,6 @@ const { KEY, TRIGGER } = require('../../../../../../src/game/runner/configs/stat
 const actions = {
   init: require('./actions/action_init.js'),
   spin: require('./../../../../tools/simulations/sims.js'),
-  bonus: require('./actions/action_wheel_bonus.js'),
-  bonus_end: require('./actions/action_wheel_bonus_end.js'),
-  buy_bonus: require('./actions/action_buy_bonus.js'),
 }
 
 module.exports.execute = async function (client) {
