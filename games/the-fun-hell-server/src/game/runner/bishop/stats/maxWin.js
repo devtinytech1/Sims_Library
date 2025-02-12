@@ -1,6 +1,6 @@
 
 const { TRIGGER } = require('../../configs/static')
-const filesController = require('../controllers/csv_controller')
+
 const context = require('../models/context')
 
 let value = 0
@@ -27,11 +27,7 @@ function check() {
 }
 
 function finalize() {
-  filesController.saveFile(
-    './out',
-    `./out/maxWin_${process.env.GAME}.json`,
-    JSON.stringify(result),
-  )
+
 }
 
 function getValue() {

@@ -1,6 +1,5 @@
 
 const output = require('../controllers/console_controller')
-const filesController = require('../controllers/csv_controller')
 const debug = require('../controllers/debug')
 const deviation = require('../controllers/deviation')
 const context = require('../models/context')
@@ -63,11 +62,10 @@ function update() {
     debug.update()
 
     model.iteration % settings.consoleUpdate === 0 && output.clear().update()
-    settings.fileUpdate && model.iteration % settings.fileUpdate === 0 && filesController.saveFilesStats()
+   
 
     if (settings.debugFileUpdate && model.iteration % settings.debugFileUpdate === 0) {
       deviation.update()
-      filesController.debugSave()
     }
   }
 
