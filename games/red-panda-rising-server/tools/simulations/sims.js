@@ -22,7 +22,7 @@ let totalFSWin = 0;
 async function execute(client) {
   initializeClient(client);
   const settings = baseSettings.get(client.gameId)
-  for (let i = 0; i < 10000000; i++) {
+  for (let i = 0; i < 1000000; i++) {
     totalSpins++;
     await playRound(client, settings);
     if ((i + 1) % 100 === 0) {
