@@ -1,21 +1,9 @@
 
 const { round } = require('../../../../../../src/utils/math.cjs')
 const baseSettings = require('../configs/settings.js')
+const { getLineModel } = require('../../../../../../src/game/runner/controllers/main_lines_controller.cjs')
 
-const settingsLinesCount =  1
-
-function getLineModel(lineId, win, position, symbolId, trigger, len, count) {
-  return {
-    id: lineId,
-    win: win,
-    len: len,
-    count: count,
-    trigger: trigger,
-    mask: position,
-    symbol: symbolId,
-    multi: 1,
-  }
-}
+const settingsLinesCount = 1
 
 function setWinModel(currentContext) {
   currentContext.win = {
@@ -45,24 +33,24 @@ function applySymbolLinesMultiplier(currentContext, sym, multi) {
 function checkWinAny(client) {
 
   const searchForPairInList = (a, b) =>
-  baseSettings.base.reelitemstoignore.findIndex(([first, second]) => 
-   (first === a && second === b) || (first === b && second === a)
- );
- const winModel = !client.node.context.win ? setWinModel(client.node.context) : client.node.context.win
+    baseSettings.base.reelitemstoignore.findIndex(([first, second]) =>
+      (first === a && second === b) || (first === b && second === a)
+    );
+  const winModel = !client.node.context.win ? setWinModel(client.node.context) : client.node.context.win
   const settingsGame = baseSettings.get(client.gameId)
-  
-  
-  for(let index = 0; index < baseSettings.base.winany.length; index++) {
-  var mask = [];
-  const symbol = baseSettings.base.winany[index];
+
+
+  for (let index = 0; index < baseSettings.base.winany.length; index++) {
+    var mask = [];
+    const symbol = baseSettings.base.winany[index];
 
     for (let col = 0; col < baseSettings.base.cols; col++) {
       for (let row = 0; row < client.node.context.matrix[col].length; row++) {
         sym = client.node.context.matrix[col][row]
-        if (sym ==  symbol && (searchForPairInList(col, row) == -1)) {
+        if (sym == symbol && (searchForPairInList(col, row) == -1)) {
           mask.push([col, row])
         }
-        
+
       }
     }
     const symbolKey = symbol
@@ -124,9 +112,9 @@ function check576Lines(client) {
   const winModel = !client.node.context.win ? setWinModel(client.node.context) : client.node.context.win
 
   const searchForPairInList = (a, b) =>
-  baseSettings.base.reelitemstoignore.findIndex(([first, second]) => 
-   (first === a && second === b) || (first === b && second === a)
- );
+    baseSettings.base.reelitemstoignore.findIndex(([first, second]) =>
+      (first === a && second === b) || (first === b && second === a)
+    );
 
   const setLinesWin = function (symbolKey, lineLength, lineCount) {
     if (settings.paytable[symbolKey] && settings.paytable[symbolKey][lineLength]) {
@@ -135,9 +123,9 @@ function check576Lines(client) {
       const mask = []
       for (let col = 0; col < lineLength; col++) {
         for (let row = 0; row < baseSettings.base.rows; row++) {
-          if ('' + client.node.context.matrix[col][row] === '' + symbolKey || itsWildSymbol(client.node.context.matrix[col][row]) || 
-              (symbolKey.slice(0, 2) == 'H1' && client.node.context.matrix[col][row].slice(0, 2) == 'H1')) {
-            if((searchForPairInList(col, row) == -1)) {
+          if ('' + client.node.context.matrix[col][row] === '' + symbolKey || itsWildSymbol(client.node.context.matrix[col][row]) ||
+            (symbolKey.slice(0, 2) == 'H1' && client.node.context.matrix[col][row].slice(0, 2) == 'H1')) {
+            if ((searchForPairInList(col, row) == -1)) {
               mask.push([col, row])
             }
           }
@@ -192,7 +180,7 @@ function check576Lines(client) {
     symbols.push({})
     for (let row = 0; row < client.node.context.matrix[col].length; row++) {
       sym = client.node.context.matrix[col][row]
-      if(sym.slice(0, 2) == 'H1') {
+      if (sym.slice(0, 2) == 'H1') {
         sym = 'H1'
       }
       if (!itsScatterSymbol(sym) && (!itsWinAnySymbol(sym)) && (searchForPairInList(col, row) == -1)) {

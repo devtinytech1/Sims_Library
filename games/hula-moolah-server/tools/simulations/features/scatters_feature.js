@@ -1,5 +1,5 @@
 
-const { foundSymbols } = require('../../../../wild-quad-squad-server/tools/simulations/matrix_controller.js')
+const { foundSymbols } = require('../../../../../src/game/runner/math/foundSymbols.cjs')
 const { initFreespins } = require('../freespins')
 
 async function scatterFeatureCheck(client, matrix, settings) {

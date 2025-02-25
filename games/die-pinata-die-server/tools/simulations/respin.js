@@ -1,7 +1,9 @@
 const baseSettings = require('../../src/game/runner/configs/settings');
 const matrix = require('../../src/game/runner/controllers/matrix_controller');
 const roundWin = require('../../../../src/sims_data/round_win_controller.cjs');
-const { foundSymbols } = require('../../../wild-quad-squad-server/tools/simulations/matrix_controller')
+const { foundSymbols } = require('../../../../src/game/runner/math/foundSymbols.cjs');
+
+
 
 // Replace symbols for the base game respin.
 function replaceSymbolsBG(client, diceRollFeature) {

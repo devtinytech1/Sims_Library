@@ -1,6 +1,6 @@
-
 const mathUtils = require('../../../../../../src/utils/math.cjs')
-const baseSettings = require('../configs/settings.js'),
+const baseSettings = require('../configs/settings.js')
+const { getLineModel, makeWinModel } = require('../../../../../../src/game/runner/controllers/main_lines_controller.cjs'),
 
   wilds = baseSettings.base.wilds,
   scatters = baseSettings.base.scatters,
@@ -8,29 +8,6 @@ const baseSettings = require('../configs/settings.js'),
   itsScatterSymbol = id => scatters.includes(id)
 
 const settingsLinesCount = 1
-
-function getLineModel(lineId, win, position, symbolId, trigger, len, count) {
-  return {
-    id: lineId,
-    win: win,
-    len: len,
-    count: count,
-    trigger: trigger,
-    mask: position,
-    symbol: symbolId,
-    multi: 1,
-  }
-}
-
-function makeWinModel(client, currentContext) {
-  currentContext.win = {
-    type: 'regular',
-    lines: [],
-    total: 0,
-  }
-  client.getWinModel = () => currentContext.win
-  return currentContext.win
-}
 
 function setLineMulti(winModel, line, multi) {
   winModel.total -= line.win

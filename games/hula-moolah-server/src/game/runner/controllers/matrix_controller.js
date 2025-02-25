@@ -30,17 +30,6 @@ async function getMatrixForHNS(client, spinMod, rows) {
   const result = [],
     sequences = baseSequences.get(client.gameId)[spinMod];
 
-  // Old implementation
-  // const getReel = async function (ix, count) {
-  //   if (count <= 0) {
-  //     return result;
-  //   }
-  //   const body = await getRandomItems1(client, sequences[ix % sequences.length], { count: rows, ix });
-  //   result.push(body.result);
-  //   return await getReel(ix + 1, count - 1);
-  // };
-  // return await getReel(0, 5); // Call getReel 5 times
-
   for (let ix = 0; result.length < 18; ix++) {
     const body = await getRandomItem(client, sequences[ix % sequences.length], { count: 18 - result.length, ix });
     result.push(...body.result);
@@ -70,18 +59,6 @@ async function generateHoldnSpinInitialMatrix(client, matrix) {
   }
   const hnsMatrix = client.node.context.holdnspin.holdnspin_matrix
   return { hnsMatrix, isReset };
-}
-
-function convertMatrix(matrix) {
-  const result = []
-  for (let col = 0; col < baseSettings.base.cols; col++) {
-    for (let row = 0; row < baseSettings.base.rows; row++) {
-      if (!(row === 0 && col === 0) && !(row === 0 && col === 4)) {
-        result.push(matrix[col][row])
-      }
-    }
-  }
-  return result
 }
 
 // Regular matrix for HNS

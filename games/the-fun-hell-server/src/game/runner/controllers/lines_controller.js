@@ -1,7 +1,9 @@
 
 const mathUtils = require('../../../../../../src/utils/math.cjs')
-const baseSettings = require('../configs/settings.js'),
-  wilds = baseSettings.base.wilds,
+const baseSettings = require('../configs/settings.js')
+const { getLineModel, makeWinModel } = require('../../../../../../src/game/runner/controllers/main_lines_controller.cjs')
+
+wilds = baseSettings.base.wilds,
   empty = baseSettings.base.blank,
   scatters = baseSettings.base.scatters,
   itsWildSymbol = id => wilds.includes(id),
@@ -9,29 +11,6 @@ const baseSettings = require('../configs/settings.js'),
   itsScatterSymbol = id => scatters.includes(id)
 
 const settingsLinesCount = 1
-
-function getLineModel(lineId, win, position, symbolId, trigger, len, count) {
-  return {
-    id: lineId,
-    win: win,
-    len: len,
-    count: count,
-    trigger: trigger,
-    mask: position,
-    symbol: symbolId,
-    multi: 1,
-  }
-}
-
-function makeWinModel(client, currentContext) {
-  currentContext.win = {
-    type: 'regular',
-    lines: [],
-    total: 0,
-  }
-  client.getWinModel = () => currentContext.win
-  return currentContext.win
-}
 
 function setLineMulti(winModel, line, multi) {
   winModel.total -= line.win
@@ -57,13 +36,13 @@ function checkDefaultLines(client, matrix) {
   let firstSK, nextSK, lineSK, lineMask, wildLine, nextWild, firstLineWild, lineMaskForMSym, lineMaskForHSym, col2Sym, thirdLineWild, firstSym, secondSym, thirdSym
 
   function winLineNode(lineNumber) {
-      const lineWin = mathUtils.round(settingsGame.paytable[lineSK][lineMask.length] * client.spinBet / settingsLinesCount)
-      winModel.lines.push(getLineModel(lineNumber, lineWin, lineMask, lineSK, null, lineMask.length))
-      winModel.total = mathUtils.round(winModel.total + lineWin)
+    const lineWin = mathUtils.round(settingsGame.paytable[lineSK][lineMask.length] * client.spinBet / settingsLinesCount)
+    winModel.lines.push(getLineModel(lineNumber, lineWin, lineMask, lineSK, null, lineMask.length))
+    winModel.total = mathUtils.round(winModel.total + lineWin)
   }
   function winLineNodeForMsym(lineNumber, payingSym, lineMaskForMSym) {
     const lineWin = mathUtils.round(settingsGame.paytable[payingSym][lineMaskForMSym.length] * client.spinBet / settingsLinesCount)
-    winModel.lines.push(getLineModel(lineNumber, lineWin, lineMaskForMSym, payingSym, null,lineMaskForMSym.length))
+    winModel.lines.push(getLineModel(lineNumber, lineWin, lineMaskForMSym, payingSym, null, lineMaskForMSym.length))
     winModel.total = mathUtils.round(winModel.total + lineWin)
   }
 
@@ -86,7 +65,7 @@ function checkDefaultLines(client, matrix) {
         thirdLineWild = matrix[2][baseSettings.base.lines[lineID][2]]
         firstLineWild = matrix[0][baseSettings.base.lines[lineID][0]]
         nextWild = itsWildSymbol(nextSK)
-        if (!itsScatterSymbol(nextSK) && !itsEmptySymbol(firstSym) && !itsEmptySymbol(secondSym) && !itsEmptySymbol(thirdSym) && ((firstSym === secondSym && secondSym === thirdSym) || (firstSym === secondSym && (thirdSym === 'W1' || thirdSym === 'W2' || thirdSym === 'W3')) || ((firstSym === 'W1' || firstSym === 'W2' || firstSym === 'W3') && secondSym === thirdSym) || ((firstSym === 'W1' ||firstSym === 'W2' || firstSym === 'W3') && (thirdSym === 'W1' || thirdSym === 'W2' || thirdSym === 'W3')))) {
+        if (!itsScatterSymbol(nextSK) && !itsEmptySymbol(firstSym) && !itsEmptySymbol(secondSym) && !itsEmptySymbol(thirdSym) && ((firstSym === secondSym && secondSym === thirdSym) || (firstSym === secondSym && (thirdSym === 'W1' || thirdSym === 'W2' || thirdSym === 'W3')) || ((firstSym === 'W1' || firstSym === 'W2' || firstSym === 'W3') && secondSym === thirdSym) || ((firstSym === 'W1' || firstSym === 'W2' || firstSym === 'W3') && (thirdSym === 'W1' || thirdSym === 'W2' || thirdSym === 'W3')))) {
           lineMask.push([column, baseSettings.base.lines[lineID][column]])
           if (wildLine && !nextWild) {
             wildLine = false

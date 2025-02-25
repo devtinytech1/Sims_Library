@@ -4,7 +4,7 @@ const { getMatrix } = require('../../src/game/runner/controllers/matrix_controll
 const { checkRoundWin } = require('../../tools/simulations/round_win_controller')
 const baseSequences = require('../../src/game/runner/configs/sequences')
 const { holdnspinFeatureCheck } = require('./features/holdnspin_feature.cjs')
-const { foundSymbols } = require('../../../wild-quad-squad-server/tools/simulations/matrix_controller.js')
+const { foundSymbols } = require('../../../../src/game/runner/math/foundSymbols.cjs')
 
 function setFreespinsModel(currentContext, allCount, addCount, leftCount, win, fs_triggering_matrix) {
   currentContext.freespins = {

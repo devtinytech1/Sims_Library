@@ -1,6 +1,6 @@
 const { round } = require('../../../../src/utils/math.cjs');
 const baseSettings = require('../../../../games/die-pinata-die-server/src/game/runner/configs/settings');
-const matrixController = require('../../../../games/die-pinata-die-server/src/game/runner/controllers/matrix_controller');
+const matrixController = require('../../../../src/game/runner/math/foundSymbols.cjs');
 
 function init(client) {
   const settings = baseSettings.get(client.gameId).features.prizePot,

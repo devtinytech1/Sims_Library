@@ -1,21 +1,11 @@
 const mathUtils = require('../../../../../../src/utils/math.cjs')
 const baseSettings = require('../../../../../die-pinata-die-server/src/game/runner/configs/settings')
-const { getLineModel } = require('../../../../../../src/game/runner/controllers/main_lines_controller.cjs')
+const { getLineModel, makeWinModel } = require('../../../../../../src/game/runner/controllers/main_lines_controller.cjs')
 
-  wilds = baseSettings.base.wilds,
+wilds = baseSettings.base.wilds,
   scatters = baseSettings.base.scatters,
   itsWildSymbol = id => wilds.includes(id),
   itsScatterSymbol = id => scatters.includes(id)
-
-function makeWinModel(client, currentContext) {
-  currentContext.win = {
-    type: 'regular',
-    lines: [],
-    total: 0,
-  }
-  client.getWinModel = () => currentContext.win
-  return currentContext.win
-}
 
 function checkWays(client, matrix) {
   const settings = baseSettings.get(client.gameId),

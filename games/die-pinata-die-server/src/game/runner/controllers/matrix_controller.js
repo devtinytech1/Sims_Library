@@ -20,27 +20,4 @@ async function make(client, mode, rows) {
   return matrix
 }
 
-//find Jackpot symbol consecutively
-function foundSymbolsforJ(matrix, symbol) {
-  let positionsOfJ = [];
-  for (let i = 0; i < matrix.length; i++) {
-    let row = matrix[i];
-    let positionsInRow = [];
-    if (row.includes(symbol)) {
-      // Iterate through the row to find positions of 'J' symbols
-      for (let j = 0; j < row.length; j++) {
-        if (row[j] === symbol) {
-          positionsInRow.push([i, j]);
-        }
-      }
-      // positionsOfJ = positionsOfJ.concat(positionsInRow);
-      positionsOfJ.push(...positionsInRow);
-    } else {
-      break;
-    }
-  }
-
-  return positionsOfJ;
-}
-
-module.exports = { make, foundSymbolsforJ }
+module.exports = { make }

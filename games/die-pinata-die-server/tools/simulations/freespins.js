@@ -1,5 +1,4 @@
-
-const foundMatrix = require('../../../wild-quad-squad-server/tools/simulations/matrix_controller')
+const foundMatrix = require('../../../../src/game/runner/math/foundSymbols.cjs');
 const baseSettings = require('../../../die-pinata-die-server/src/game/runner/configs/settings');
 const matrix = require('../../src/game/runner/controllers/matrix_controller');
 const roundWin = require('../../../../src/sims_data/round_win_controller.cjs');
