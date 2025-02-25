@@ -4,11 +4,12 @@ const { configureSettings } = require('../../../../../../../src/game/runner/cont
 const linesController = require('../lines_controller');
 const matrix = require('../matrix_controller');
 const features = require('../features/features');
+const { makeWinModel } = require('../../../../../../../src/game/runner/controllers/main_lines_controller.cjs')
 
 // Generic function to handle board generation
 async function runBoardGeneration(client, { state, trigger, matrix, linesController, features, baseSettings }) {
   client.node.context = { matrix: await matrix.make(client, 'MainBoard', baseSettings.base.rows) };
-  linesController.makeWinModel(client, client.context);
+  makeWinModel(client, client.context);
   client.nextState = state;
   client.nextTrigger = trigger || state;
   features.init(client);

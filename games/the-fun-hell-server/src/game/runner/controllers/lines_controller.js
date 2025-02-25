@@ -1,7 +1,7 @@
 
 const mathUtils = require('../../../../../../src/utils/math.cjs')
 const baseSettings = require('../configs/settings.js')
-const { getLineModel, makeWinModel } = require('../../../../../../src/game/runner/controllers/main_lines_controller.cjs')
+const { getLineModel, makeWinModel, setLineMulti } = require('../../../../../../src/game/runner/controllers/main_lines_controller.cjs')
 
 wilds = baseSettings.base.wilds,
   empty = baseSettings.base.blank,
@@ -12,13 +12,13 @@ wilds = baseSettings.base.wilds,
 
 const settingsLinesCount = 1
 
-function setLineMulti(winModel, line, multi) {
-  winModel.total -= line.win
-  line.win /= line.multi
-  line.multi *= multi
-  line.win = mathUtils.round(line.win * line.multi)
-  winModel.total = mathUtils.round(winModel.total + line.win)
-}
+// function setLineMulti(winModel, line, multi) {
+//   winModel.total -= line.win
+//   line.win /= line.multi
+//   line.multi *= multi
+//   line.win = mathUtils.round(line.win * line.multi)
+//   winModel.total = mathUtils.round(winModel.total + line.win)
+// }
 
 function applySymbolLinesMultiplier(currentContext, sym, multi) {
   currentContext.win.lines.forEach(line => sym === line.symbol && setLineMulti(currentContext.win, line, multi))
@@ -113,4 +113,4 @@ function checkDefaultLines(client, matrix) {
   }
 }
 
-module.exports = { setLineMulti, applySymbolLinesMultiplier, makeWinModel, checkDefaultLines }
+module.exports = { setLineMulti, applySymbolLinesMultiplier, checkDefaultLines }

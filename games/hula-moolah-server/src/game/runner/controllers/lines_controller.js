@@ -1,7 +1,7 @@
 
 const { round } = require('../../../../../../src/utils/math.cjs')
 const baseSettings = require('../configs/settings.js')
-const { getLineModel } = require('../../../../../../src/game/runner/controllers/main_lines_controller.cjs')
+const { getLineModel, setLineMulti } = require('../../../../../../src/game/runner/controllers/main_lines_controller.cjs')
 
 const settingsLinesCount = 1
 
@@ -14,13 +14,13 @@ function setWinModel(currentContext) {
   return currentContext.win
 }
 
-function setLineMulti(winModel, line, multi) {
-  winModel.total -= line.win
-  line.win /= line.multi
-  line.multi *= multi
-  line.win = round(line.win * line.multi)
-  winModel.total = round(winModel.total + line.win)
-}
+// function setLineMulti(winModel, line, multi) {
+//   winModel.total -= line.win
+//   line.win /= line.multi
+//   line.multi *= multi
+//   line.win = round(line.win * line.multi)
+//   winModel.total = round(winModel.total + line.win)
+// }
 
 function applyAllLinesMultiplier(currentContext, multi) {
   currentContext.win.lines.forEach(line => setLineMulti(currentContext.win, line, multi))

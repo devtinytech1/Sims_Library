@@ -1,6 +1,6 @@
 const mathUtils = require('../../../../../../src/utils/math.cjs')
 const baseSettings = require('../configs/settings.js')
-const { getLineModel, makeWinModel } = require('../../../../../../src/game/runner/controllers/main_lines_controller.cjs'),
+const { getLineModel, makeWinModel, setLineMulti } = require('../../../../../../src/game/runner/controllers/main_lines_controller.cjs'),
 
   wilds = baseSettings.base.wilds,
   scatters = baseSettings.base.scatters,
@@ -9,13 +9,13 @@ const { getLineModel, makeWinModel } = require('../../../../../../src/game/runne
 
 const settingsLinesCount = 1
 
-function setLineMulti(winModel, line, multi) {
-  winModel.total -= line.win
-  line.win /= line.multi
-  line.multi *= multi
-  line.win = mathUtils.round(line.win * line.multi)
-  winModel.total = mathUtils.round(winModel.total + line.win)
-}
+// function setLineMulti(winModel, line, multi) {
+//   winModel.total -= line.win
+//   line.win /= line.multi
+//   line.multi *= multi
+//   line.win = mathUtils.round(line.win * line.multi)
+//   winModel.total = mathUtils.round(winModel.total + line.win)
+// }
 
 function checkWays(client, matrix) {
   const settings = baseSettings.get(client.gameId),
