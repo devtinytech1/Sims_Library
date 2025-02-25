@@ -12,14 +12,6 @@ wilds = baseSettings.base.wilds,
 
 const settingsLinesCount = 1
 
-// function setLineMulti(winModel, line, multi) {
-//   winModel.total -= line.win
-//   line.win /= line.multi
-//   line.multi *= multi
-//   line.win = mathUtils.round(line.win * line.multi)
-//   winModel.total = mathUtils.round(winModel.total + line.win)
-// }
-
 function applySymbolLinesMultiplier(currentContext, sym, multi) {
   currentContext.win.lines.forEach(line => sym === line.symbol && setLineMulti(currentContext.win, line, multi))
 }

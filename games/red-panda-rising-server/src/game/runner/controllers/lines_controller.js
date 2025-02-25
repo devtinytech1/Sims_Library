@@ -9,14 +9,6 @@ const { getLineModel, makeWinModel, setLineMulti } = require('../../../../../../
 
 const settingsLinesCount = 1
 
-// function setLineMulti(winModel, line, multi) {
-//   winModel.total -= line.win
-//   line.win /= line.multi
-//   line.multi *= multi
-//   line.win = mathUtils.round(line.win * line.multi)
-//   winModel.total = mathUtils.round(winModel.total + line.win)
-// }
-
 function checkWays(client, matrix) {
   const settings = baseSettings.get(client.gameId),
     symbols = matrix.reduce((acc, reel) => {
