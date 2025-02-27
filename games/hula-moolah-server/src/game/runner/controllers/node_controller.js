@@ -1,11 +1,10 @@
-
 const { response } = require('../compose')
 const { keys } = require('../configs/keys')
 const { triggers } = require('../configs/triggers')
 
 const actions = {
   init: require('./actions/action_init_node.js'),
-  spin: require('../../../../tools/simulations/sims.js'), 
+  spin: require('../../../../tools/simulations/sims.js'),
 }
 
 module.exports.getNode = async function (client) {
@@ -36,8 +35,6 @@ module.exports.getNode = async function (client) {
       return response(client)
     }
     catch (e) {
-      console.log(e.message)
-      console.log(e.stack)
       return await checkTry(e)
     }
   }

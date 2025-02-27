@@ -14,20 +14,8 @@ function setWinModel(currentContext) {
   return currentContext.win
 }
 
-// function setLineMulti(winModel, line, multi) {
-//   winModel.total -= line.win
-//   line.win /= line.multi
-//   line.multi *= multi
-//   line.win = round(line.win * line.multi)
-//   winModel.total = round(winModel.total + line.win)
-// }
-
 function applyAllLinesMultiplier(currentContext, multi) {
   currentContext.win.lines.forEach(line => setLineMulti(currentContext.win, line, multi))
-}
-
-function applySymbolLinesMultiplier(currentContext, sym, multi) {
-  currentContext.win.lines.forEach(line => sym === line.symbol && setLineMulti(currentContext.win, line, multi))
 }
 
 function checkWinAny(client) {
@@ -207,4 +195,4 @@ const itsWinAnySymbol = function (id) {
   return baseSettings.base.winany.includes(id)
 }
 
-module.exports = { checkDefaultLines, check576Lines, setLineMulti, applyAllLinesMultiplier, applySymbolLinesMultiplier, checkWinAny }
+module.exports = { checkDefaultLines, check576Lines, setLineMulti, applyAllLinesMultiplier, checkWinAny }

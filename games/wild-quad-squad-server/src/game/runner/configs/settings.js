@@ -10,24 +10,11 @@ const base = {
   autoplay: [5, 10, 20, 50, 100, 200, 300, 400, 500, 1000],
   autoplay_limits_loss: [5, 10, 20, 50, 100, 1000],
   autoplay_limits_win: [5, 10, 20, 50, 100, 1000],
-
   bigWin: [
-    {
-      key: WIN.TYPE_BIG,
-      value: 10,
-    },
-    {
-      key: WIN.TYPE_SUPER,
-      value: 20,
-    },
-    {
-      key: WIN.TYPE_MEGA,
-      value: 35,
-    },
-    {
-      key: WIN.TYPE_EPIC,
-      value: 60,
-    },
+    { key: WIN.TYPE_BIG, value: 10 },
+    { key: WIN.TYPE_SUPER, value: 20 },
+    { key: WIN.TYPE_MEGA, value: 35 },
+    { key: WIN.TYPE_EPIC, value: 60 },
   ],
   rows: 6,
   cols: 6,

@@ -1,4 +1,3 @@
-
 const settingsByKey = { settings94: require('./settings94') }
 
 const base = {
@@ -11,31 +10,18 @@ const base = {
   autoplay_limits_win: [5, 10, 20, 50, 100, 1000],
 
   linesType: 'lines',
-
   bigWin: [
-    {
-      key: 'big',
-      value: 20,
-    },
-    {
-      key: 'mega',
-      value: 50,
-    },
-    {
-      key: 'epic',
-      value: 100,
-    },
-    {
-      key: 'sensational',
-      value: 200,
-    },
+    { key: 'big', value: 20 },
+    { key: 'mega', value: 50 },
+    { key: 'epic', value: 100 },
+    { key: 'sensational', value: 200 },
   ],
   rows: 4,
   cols: 5,
   wilds: ['W'],
   scatters: ['S'],
   winany: [],
-  reelitemstoignore:[[0, 0], [4,0]],
+  reelitemstoignore: [[0, 0], [4, 0]],
 }
 
 const get = function (key) {

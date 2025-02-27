@@ -43,22 +43,10 @@ const base = {
 
   linesType: 'lines',
   bigWin: [
-    {
-      key: WIN.TYPE_BIG,
-      value: 15,
-    },
-    {
-      key: WIN.TYPE_SUPER,
-      value: 50,
-    },
-    {
-      key: WIN.TYPE_MEGA,
-      value: 100,
-    },
-    {
-      key: WIN.TYPE_EPIC,
-      value: 250,
-    },
+    { key: WIN.TYPE_BIG, value: 15 },
+    { key: WIN.TYPE_SUPER, value: 50 },
+    { key: WIN.TYPE_MEGA, value: 100 },
+    { key: WIN.TYPE_EPIC, value: 250 },
   ],
   rows: 3,
   cols: 5,

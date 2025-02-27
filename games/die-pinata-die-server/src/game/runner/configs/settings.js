@@ -14,22 +14,10 @@ const base = {
   batchValue: 10000,
 
   bigWin: [
-    {
-      key: WIN.TYPE_BIG,
-      value: 20,
-    },
-    {
-      key: WIN.TYPE_SUPER,
-      value: 50,
-    },
-    {
-      key: WIN.TYPE_MEGA,
-      value: 200,
-    },
-    {
-      key: WIN.TYPE_EPIC,
-      value: 350,
-    },
+    { key: WIN.TYPE_BIG, value: 20 },
+    { key: WIN.TYPE_SUPER, value: 50 },
+    { key: WIN.TYPE_MEGA, value: 200 },
+    { key: WIN.TYPE_EPIC, value: 350 },
   ],
   //Basegame rows according 6*4
   rows: 4,
@@ -37,9 +25,9 @@ const base = {
   //Freespin rows according 6*6
   fsrows: 6,
   wilds: 'W',
-  scatters:'B',
-  Special : 'S',
-  Jackpot : 'J',
+  scatters: 'B',
+  Special: 'S',
+  Jackpot: 'J',
 }
 
 const get = function (key) {
