@@ -1,0 +1,15 @@
+{
+  "name": "gods-of-glory-server",
+  "version": "1.0.0",
+  "description": "Gods of Glory slot simulation server",
+  "main": "tools/simulations/index.js",
+  "scripts": {
+    "start": "node tools/simulations/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "author": "",
+  "license": "ISC"
+}

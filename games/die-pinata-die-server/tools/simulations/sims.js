@@ -14,11 +14,11 @@ const { handleJPMajorWinsData, logMajorFeatureFrequency } = require('./LogFiles/
 const { handleJPGrandWinsData, logGrandFeatureFrequency } = require('./LogFiles/logJPGrandData');
 const { handleFGWinsData, logNoWinFSFeatureFrequency } = require('./LogFiles/logFGData');
 const { handleBGWildWinsData, logNoWinBGWildFeatureFrequency } = require('./LogFiles/logBGWildData');
-const { handleBGBonusWinsData, logNoWinBGBonusFeatureFrequency } = require('./LogFiles/logBGBonusData');
-const { handleBGRespinWinsData, logNoWinBGRespinFeatureFrequency } = require('./LogFiles/logBGRespinData');
+// const { handleBGRespinWinsData, logNoWinBGRespinFeatureFrequency } = require('./LogFiles/logBGRespinData');
 const { handleFGRespinWinsData, logNoWinFGRespinFeatureFrequency } = require('./LogFiles/logFGRespinData');
 const { handleFGWildWinsData, logNoWinFGWildFeatureFrequency } = require('./LogFiles/logFGWildData');
 const { handleFGBonusWinsData, logNoWinFGBonusFeatureFrequency } = require('./LogFiles/logFGBonusData');
+const { handleBaseGameWinsData,logNoWinBaseGameFeatureFrequency } = require('../../../../src/sims_data/logFiles/logFeatureData.cjs');
 
 let totalDiceWild = 0, totalDiceBonus = 0, totalRespinWin = 0, totalBasegameWin = 0;
 
@@ -32,7 +32,7 @@ let totalSpins = 0;
 
 let freeSpinTriggerCount = 0;
 let bgWildSpinTriggerCount = 0;
-let bgBonusSpinTriggerCount = 0;
+let bgFeatureSpinTriggerCount = 0;
 let bgRespinSpinTriggerCount = 0;
 
 let fgRespinSpinTriggerCount = 0;
@@ -40,6 +40,8 @@ let fgWildSpinTriggerCount = 0;
 let fgBonusSpinTriggerCount = 0;
 
 async function execute(client) {
+  const bgBonusFeature = 'BG_Bonus'
+  const bgRespinFeature = 'BG_Respin'
   initializeClient(client);
   const settings = baseSettings.get(client.gameId);
   let bgTotalWin = 0, fgTotalWin = 0, jpTotalWin = 0;
@@ -58,8 +60,8 @@ async function execute(client) {
   }
   console.log('FREESPINS TRIGGERED COUNT', freeSpinTriggerCount);
   logNoWinBGWildFeatureFrequency(bgWildSpinTriggerCount, client.node.spinBet, totalSpins)
-  logNoWinBGBonusFeatureFrequency(bgBonusSpinTriggerCount, client.node.spinBet, totalSpins)
-  logNoWinBGRespinFeatureFrequency(bgRespinSpinTriggerCount, client.node.spinBet, totalSpins)
+  logNoWinBaseGameFeatureFrequency(bgFeatureSpinTriggerCount, client.node.spinBet, totalSpins, bgBonusFeature)
+  logNoWinBaseGameFeatureFrequency(bgRespinSpinTriggerCount, client.node.spinBet, totalSpins, bgRespinFeature)
   logNoWinFSFeatureFrequency(freeSpinTriggerCount, client.node.spinBet, totalSpins)
   logNoWinFGRespinFeatureFrequency(fgRespinSpinTriggerCount, client.node.spinBet, totalSpins)
   logNoWinFGWildFeatureFrequency(fgWildSpinTriggerCount, client.node.spinBet, totalSpins)
@@ -138,7 +140,7 @@ async function playRound(client, settings) {
     roundRespinWin = getDiceRespinWin(client);
     if (roundRespinWin > 0) {
       bgRespinSpinTriggerCount++
-      await handleBGRespinWinsData(roundRespinWin)
+      await handleBaseGameWinsData(roundRespinWin)
     }
   }
   let isFSTriggered = await scatterFeatureCheck1(client, client.matrix, settings.features.spin, isFsDiceTriggered);
@@ -225,8 +227,8 @@ async function getDiceWinData(client) {
   if (winData.bonusPositions) {
     dice_Bonus = winData.after.total;
     if (dice_Bonus > 0) {
-      bgBonusSpinTriggerCount++
-      await handleBGBonusWinsData(dice_Bonus)
+      bgFeatureSpinTriggerCount++
+      await handleBaseGameWinsData(dice_Bonus)
     }
   }
   return [dice_Wild, dice_Bonus];
